@@ -1,0 +1,26 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "",
+  "default": "index.html",
+  "scripts": {
+    "dev": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html --public-url /liudmilarodzina-JSFEPRESCHOOL2023Q2",
+    "deploy": "gh-pages -d dist -e library",
+    "predeploy": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolling-scopes-school/liudmilarodzina-JSFEPRESCHOOL2023Q2.git"
+  },
+  "homepage": "https://github.com/rolling-scopes-school/liudmilarodzina-JSFEPRESCHOOL2023Q2",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.9.3",
+    "gh-pages": "^5.0.0",
+    "parcel": "^2.9.3",
+    "sass": "^1.64.1"
+  }
+}
