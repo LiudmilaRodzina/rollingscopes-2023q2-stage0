@@ -5,15 +5,15 @@
   "default": "index.html",
   "scripts": {
     "dev": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html --public-url /liudmilarodzina-JSFEPRESCHOOL2023Q2/library",
+    "build": "parcel build ./src/index.html --public-url /liudmilarodzina-JSFEPRESCHOOL2023Q2",
     "deploy": "gh-pages -d dist -e library",
     "predeploy": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rolling-scopes-school/liudmilarodzina-JSFEPRESCHOOL2023Q2/library.git"
+    "url": "git+https://github.com/rolling-scopes-school/liudmilarodzina-JSFEPRESCHOOL2023Q2.git"
   },
-  "homepage": "https://github.com/rolling-scopes-school/liudmilarodzina-JSFEPRESCHOOL2023Q2/library",
+  "homepage": "https://github.com/rolling-scopes-school/liudmilarodzina-JSFEPRESCHOOL2023Q2",
   "keywords": [],
   "author": "",
   "license": "ISC",
