@@ -1,7 +1,11 @@
-$color-primary: #bb945f;
-$blue: rgb(42, 42, 196);
+@use "components/buttons";
+@use "components/links";
+@use "layout/navigation";
+@use "layout/header";
+@use "layout/sections";
+@use "layout/footer";
 
-body {
-  background-color: $color-primary;
-  color: $blue;
-}
+@use "abstracts/colors";
+
+@use "base/reset";
+@use "base/typography";

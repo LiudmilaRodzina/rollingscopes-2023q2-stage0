@@ -1,0 +1,17 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.navigation {
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+
+    font-size: 2rem;
+    line-height: 50px; /* 250% */
+  }
+}

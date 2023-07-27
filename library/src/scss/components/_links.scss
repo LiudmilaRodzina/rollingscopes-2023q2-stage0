@@ -1,0 +1,24 @@
+@use "../abstracts" as *;
+
+.list {
+  list-style: none;
+}
+
+.link {
+  &:link,
+  &:visited {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: underline;
+    color: #ecd1ac;
+    cursor: pointer;
+  }
+
+  &:active {
+    text-decoration: none;
+    color: $color-primary;
+  }
+}

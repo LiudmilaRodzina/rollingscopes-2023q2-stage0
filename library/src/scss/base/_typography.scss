@@ -1,0 +1,115 @@
+@use "../abstracts" as *;
+
+// font-family
+// letter-spacing
+// letter size
+
+.text--light {
+  color: $color-text-light;
+}
+.text--dark {
+  color: $color-secondary;
+}
+.text--black {
+  color: $color-text-dark;
+}
+
+.heading-secondary {
+  text-align: center;
+  font-family: Forum;
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 5rem; /* 125% */
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.heading-underlined {
+  text-align: center;
+}
+
+.heading-tertiary {
+  display: inline-block;
+  color: $color-secondary;
+  font-family: Forum;
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 4rem; /* 100% */
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  text-align: center;
+  position: relative;
+  padding-bottom: 6.1rem;
+
+  &::after {
+    content: "";
+    border-bottom: 1px solid $color-secondary;
+    position: absolute;
+    width: 5rem;
+    height: 1px;
+    left: 30%;
+    bottom: 4.1rem;
+  }
+}
+
+.heading-tertiary--coffee {
+  color: $color-primary;
+  font-family: Forum;
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 4rem; /* 100% */
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  padding-bottom: 4rem;
+  padding-top: 4rem;
+}
+
+.heading_book-card {
+  display: inline-block;
+  color: $color-text-dark;
+  font-family: Forum;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 4rem; /* 200% */
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  position: relative;
+  text-align: left;
+  padding-bottom: 2rem;
+
+  &::after {
+    content: "";
+    border-bottom: 1px solid $color-primary;
+    position: absolute;
+    width: 5rem;
+    height: 1px;
+    left: 0;
+    bottom: 2rem;
+  }
+}
+
+.paragraph {
+  color: $color-text-dark;
+  text-align: center;
+  font-family: Inter;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 4rem; /* 200% */
+
+  &--start {
+    text-align: left;
+  }
+  &--end {
+    text-align: right;
+  }
+  &--start-footer {
+    color: $color-text-light;
+  }
+  &--end-footer {
+    text-align: right;
+    color: $color-text-light;
+  }
+  &--footer {
+    color: $color-text-light;
+  }
+}
