@@ -1,3 +1,5 @@
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Forum&display=swap";
 .list {
   list-style: none;
 }
@@ -18,7 +20,7 @@
   text-decoration: none;
 }
 
-.navigation {
+.header__navigation {
   align-items: center;
   gap: 4rem;
   display: flex;
@@ -37,7 +39,6 @@
   background-color: #0c0c0e;
   justify-content: space-between;
   align-items: center;
-  min-height: 9rem;
   padding: 2rem;
   display: flex;
 }
@@ -62,7 +63,7 @@
 
 .section__welcome_heading {
   background-color: #0c0c0e;
-  width: 52rem;
+  max-width: 61rem;
   margin-top: 22rem;
   padding: 3.5rem 4rem;
   position: absolute;
@@ -72,9 +73,34 @@
   padding: 2rem 2rem 4rem;
 }
 
-.section__about_slider {
-  justify-content: space-around;
+.slider {
+  flex-direction: column;
   display: flex;
+}
+
+.slider__cards {
+  justify-content: space-between;
+  padding-top: 2rem;
+  display: flex;
+}
+
+.slider__pagination {
+  justify-content: center;
+  column-gap: 1rem;
+  padding: 4rem 0;
+  display: flex;
+}
+
+.pagination-dot {
+  cursor: pointer;
+  background-color: #0c0c0e;
+  border-radius: 50%;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.active-dot {
+  background-color: #bb945f;
 }
 
 .section__favorites {
@@ -265,21 +291,28 @@ body {
   color: #000;
 }
 
-.heading-secondary {
+.primary-title {
   text-align: center;
   letter-spacing: 3px;
   text-transform: uppercase;
+  flex-direction: column;
+  padding: 0 8rem;
   font-family: Forum;
   font-size: 4rem;
   font-weight: 400;
   line-height: 5rem;
+  display: flex;
+}
+
+.primary-title span:first-child {
+  padding-right: 1rem;
 }
 
 .heading-underlined {
   text-align: center;
 }
 
-.heading-tertiary {
+.section-title {
   color: #0c0c0e;
   letter-spacing: 2px;
   text-transform: capitalize;
@@ -293,7 +326,7 @@ body {
   position: relative;
 }
 
-.heading-tertiary:after {
+.section-title:after {
   content: "";
   border-bottom: 1px solid #0c0c0e;
   width: 5rem;
@@ -342,7 +375,6 @@ body {
 .paragraph {
   color: #000;
   text-align: center;
-  font-family: Inter;
   font-size: 2rem;
   font-weight: 400;
   line-height: 4rem;
