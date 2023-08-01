@@ -14,21 +14,28 @@
   color: $color-text-dark;
 }
 
-.heading-secondary {
+.primary-title {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   font-family: Forum;
   font-size: 4rem;
   font-weight: 400;
-  line-height: 5rem; /* 125% */
+  line-height: 5rem;
   letter-spacing: 3px;
   text-transform: uppercase;
+  padding: 0 8rem;
+
+  & span:first-child {
+    padding-right: 1rem;
+  }
 }
 
 .heading-underlined {
   text-align: center;
 }
 
-.heading-tertiary {
+.section-title {
   display: inline-block;
   color: $color-secondary;
   font-family: Forum;
@@ -91,10 +98,9 @@
 .paragraph {
   color: $color-text-dark;
   text-align: center;
-  font-family: Inter;
   font-size: 2rem;
   font-weight: 400;
-  line-height: 4rem; /* 200% */
+  line-height: 4rem;
 
   &--start {
     text-align: left;

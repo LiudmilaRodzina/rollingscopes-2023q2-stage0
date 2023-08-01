@@ -23,9 +23,9 @@
           <a class="link text--light" href="#">Brooklyn Public Library</a>
         </h1>
       </div>
-      <div class="navigation">
-        <nav class="navigation navigation__list">
-          <ul class="navigation navigation__items list">
+      <div class="header__navigation">
+        <nav class="navigation">
+          <ul class="navigation__items list">
             <li><a class="link text--light" href="#about">About</a></li>
             <li><a class="link text--light" href="#favorites">Favorites</a></li>
             <li>
@@ -37,16 +37,16 @@
         </nav>
         <div class="icon link">
           <a href="#"
-            ><img src="../src/source/icons/icon_profile.svg" alt="icon-profile"
+            ><img src="../src/source/icons/icon_profile.svg" alt="profile icon"
           /></a>
         </div>
       </div>
     </header>
     <section class="section section__welcome">
       <div class="section__welcome_heading">
-        <h2 class="heading-secondary text--light">
-          Welcome<br />
-          to Brooklyn<br />
+        <h2 class="primary-title text--light">
+          <span>Welcome</span>
+          <span>to the Brooklyn</span>
           Library
         </h2>
       </div>
@@ -55,28 +55,52 @@
     <main class="main">
       <section class="section section__about" id="about">
         <div class="heading-underlined">
-          <h3 class="heading-tertiary">About</h3>
+          <h2 class="section-title">About</h2>
         </div>
         <p class="section__about_text paragraph">
           The Brooklyn Library is a free workspace, a large number of books and
           a cozy coffee shop inside
         </p>
-
-        <div class="section__about_slider">
-          <div class="section__about_slider_card">
-            <img src="../src/source/images/about-1.png" alt="card" class="" />
+        <div class="slider">
+          <div class="slider__cards">
+            <div class="slider__card">
+              <img
+                src="../src/source/images/about-1.png"
+                alt="Photo of a lady looking for a book on a library shelf"
+                class=""
+              />
+            </div>
+            <div class="slider__card">
+              <img
+                src="../src/source/images/about-2.png"
+                alt="Photo of marble busts inside a library"
+                class=""
+              />
+            </div>
+            <div class="slider__card">
+              <img
+                src="../src/source/images/about-3.png"
+                alt="Panoramic view of library interior"
+                class=""
+              />
+            </div>
           </div>
-          <div class="section__about_slider_card">
-            <img src="../src/source/images/about-2.png" alt="card" class="" />
-          </div>
-          <div class="section__about_slider_card">
-            <img src="../src/source/images/about-3.png" alt="card" class="" />
+          <div class="slider__pagination">
+            <div class="pagination-dot active-dot">
+              <span class="pagination-dot__content"></span>
+            </div>
+            <div class="pagination-dot">
+              <span class="pagination-dot__content"></span>
+            </div>
+            <div class="pagination-dot">
+              <span class="pagination-dot__content"></span>
+            </div>
           </div>
         </div>
       </section>
       <section class="section section__favorites" id="favorites">
         <div class="heading-underlined">
-          <h3 class="heading-tertiary">Favorites</h3>
+          <h2 class="section-title">Favorites</h2>
         </div>
         <p class="paragraph paragraph--start">Pick favorites of season</p>
         <form class="season-select">
@@ -192,7 +216,7 @@
       </section>
       <section class="section section__coffeeshop" id="coffeeshop">
         <div class="heading-underlined">
-          <h3 class="heading-tertiary">Coffee Shop</h3>
+          <h2 class="section-title">Coffee Shop</h2>
         </div>
         <p class="section__coffeeshop_text paragraph">
           In our library, we have of cozy coffee shop, welcoming in customers
@@ -284,7 +308,7 @@
       </section>
       <section class="section section__contacts" id="contacts">
         <div class="heading-underlined">
-          <h3 class="heading-tertiary">Our Contacts</h3>
+          <h2 class="section-title">Our Contacts</h2>
         </div>
         <div class="section__contacts_info">
           <div class="section__contacts_address">
@@ -312,7 +336,7 @@
       </section>
       <section class="section section__cards" id="cards">
         <div class="heading-underlined">
-          <h3 class="heading-tertiary">Digital Library Cards</h3>
+          <h2 class="section-title">Digital Library Cards</h2>
         </div>
         <div class="section__cards_info">
           <div class="form__sign-in">

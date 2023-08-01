@@ -1,10 +1,8 @@
 @use "../abstracts" as *;
 
 .header {
-  min-height: 9rem;
   background-color: #0c0c0e;
   padding: 2rem;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,8 +10,8 @@
 
 .logo {
   font-family: "Forum";
-  font-size: 3rem;
   font-weight: 400;
+  font-size: 3rem;
   line-height: 5rem; /* 166.667% */
   letter-spacing: 0.6px;
 }

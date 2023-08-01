@@ -12,7 +12,7 @@
   position: relative;
 
   &_heading {
-    width: 52rem;
+    max-width: 61rem;
     padding: 3.5rem 4rem;
     background-color: $color-secondary;
     margin-top: 22rem;
@@ -24,11 +24,34 @@
 .section__about {
   padding: 2rem 2rem 4rem 2rem;
 }
-
-.section__about_slider {
+.slider {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
 }
+.slider__cards {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+}
+
+.slider__pagination {
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+  padding: 4rem 0;
+}
+
+.pagination-dot {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background-color: $color-secondary;
+  cursor: pointer;
+}
+.active-dot {
+  background-color: $color-primary;
+}
+
 // FAVORITES ////////////////////////////////////////////////////////////////////////////
 .section__favorites {
   padding: 2rem 2rem 4rem 2rem;
