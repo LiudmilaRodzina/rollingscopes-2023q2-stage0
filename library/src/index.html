@@ -35,7 +35,7 @@
             <li><a class="link text--light" href="#cards">Library Card</a></li>
           </ul>
         </nav>
-        <div class="icon link">
+        <div class="header__icon">
           <a href="#"
             ><img src="../src/source/icons/icon_profile.svg" alt="profile icon"
           /></a>
@@ -57,7 +57,7 @@
         <div class="heading-underlined">
           <h2 class="section-title">About</h2>
         </div>
-        <p class="section__about_text paragraph">
+        <p class="section__about_text paragraph--center">
           The Brooklyn Library is a free workspace, a large number of books and
           a cozy coffee shop inside
         </p>
@@ -102,115 +102,142 @@
         <div class="heading-underlined">
           <h2 class="section-title">Favorites</h2>
         </div>
-        <p class="paragraph paragraph--start">Pick favorites of season</p>
-        <form class="season-select">
-          <div>
-            <input
-              type="radio"
-              id="winter"
-              name="season"
-              value="winter"
-              checked
-            />
-            <label for="winter">Winter</label>
+        <p class="paragraph form-title">Pick favorites of season</p>
+        <form class="seasons">
+          <!-- <div class="season-select">
+            <input type="radio" id="winter" name="season" checked />
+            <label class="season-select__label" for="winter">Winter</label>
           </div>
-          <div>
-            <input type="radio" id="spring" name="season" value="spring" />
+
+          <div class="season-select">
+            <input type="radio" id="spring" name="season" />
             <label for="spring">Spring</label>
           </div>
-          <div>
-            <input type="radio" id="summer" name="season" value="summer" />
+          <div class="season-select">
+            <input type="radio" id="summer" name="season" />
             <label for="summer">Summer</label>
           </div>
-          <div>
-            <input type="radio" id="autumn" name="season" value="autumn" />
+          <div class="season-select">
+            <input type="radio" id="autumn" name="season" />
             <label for="autumn">Autumn</label>
-          </div>
+          </div> -->
+
+          <label for="winter" class="radio form-title">
+            <input
+              checked
+              type="radio"
+              name="season"
+              id="winter"
+              class="radio__input"
+            />
+            <div class="radio__radio"></div>
+            Winter
+          </label>
+          <label for="spring" class="radio">
+            <input
+              type="radio"
+              name="season"
+              id="spring"
+              class="radio__input"
+            />
+            <div class="radio__radio"></div>
+            Spring
+          </label>
+          <label for="summer" class="radio">
+            <input
+              type="radio"
+              name="season"
+              id="summer"
+              class="radio__input"
+            />
+            <div class="radio__radio"></div>
+            Summer
+          </label>
+          <label for="autumn" class="radio">
+            <input
+              type="radio"
+              name="season"
+              id="autumn"
+              class="radio__input"
+            />
+            <div class="radio__radio"></div>
+            Autumn
+          </label>
         </form>
 
-        <div class="section__favorites section__favorites_book-cards">
-          <div class="book-card">
-            <div class="heading">
-              <h3 class="heading_book-card">Staff Picks</h3>
-            </div>
-            <p class="paragraph paragraph--start">
-              The book Eaters <br /><span>By Sunyi Dean</span>
-            </p>
-            <p class="paragraph paragraph--start">
+        <div class="books">
+          <div class="book">
+            <span class="book__tag">Staff Picks </span>
+            <h3 class="book__title">The book Eaters</h3>
+            <span class="book__title_author">by Sunyi Dean</span>
+            <p class="book__description">
               An unusual sci-fi story about a book eater woman who tries
               desperately to save her dangerous mind-eater son from tradition
               and certain death. Complete with dysfunctional family values,
               light Sapphic romance, and a strong, complex protagonist. Not for
               the faint of heart.
             </p>
-            <button class="btn">Buy</button>
+            <button class="book__button btn">Buy</button>
             <img
-              class="book-img"
+              class="book__img"
               src="../src/source/images/favourites/1-the-book-eaters.png"
               alt="Photo of 'The Book Eaters' cover"
             />
+            <div class="book__border"></div>
           </div>
-          <div class="book-card">
-            <div class="heading">
-              <h3 class="heading_book-card">Staff Picks</h3>
-            </div>
-            <p class="paragraph paragraph--start">
-              Cackle <br /><span>By Rachel Harrison</span>
-            </p>
-            <p class="paragraph paragraph--start">
+          <div class="book">
+            <span class="book__tag">Staff Picks </span>
+            <h3 class="book__title">Cackle</h3>
+            <span class="book__title_author">By Rachel Harrison</span>
+            <p class="book__description">
               Are your Halloween movies of choice The Witches of Eastwick and
               Practical Magic? Look no further than here - where a woman
               recovering from a breakup moves to a quaint town in upstate New
               York and befriends a beautiful witch.
             </p>
-            <button class="btn">Buy</button>
+            <button class="book__button btn">Buy</button>
             <img
-              class="book-img"
+              class="book__img"
               src="../src/source/images/favourites/2-cackle.png"
               alt="Photo of 'Cackle' cover"
             />
+            <div class="book__border"></div>
           </div>
-          <div class="book-card">
-            <div class="heading">
-              <h3 class="heading_book-card">Staff Picks</h3>
-            </div>
-            <p class="paragraph paragraph--start">
-              Dante: Poet of the Secular World <br /><span
-                >By Erich Auerbach</span
-              >
-            </p>
-            <p class="paragraph paragraph--start">
+          <div class="book">
+            <span class="book__tag">Staff Picks </span>
+            <h3 class="book__title">Dante: Poet of the Secular World</h3>
+            <span class="book__title_author">By Erich Auerbach</span>
+            <p class="book__description">
               Auerbach's engaging book places the 'Comedy' within the tradition
               of epic, tragedy, and philosophy in general, arguing for Dante's
               uniqueness as one who raised the individual and his drama of soul
               into something of divine significance—an inspired introduction to
               Dante's main themes.
             </p>
-            <button class="btn">Buy</button>
+            <button class="book__button btn">Buy</button>
             <img
-              class="book-img"
+              class="book__img"
               src="../src/source/images/favourites/3-dante.png"
               alt="Photo of 'Dante: Poet of the Secular World' cover"
             />
+            <div class="book__border"></div>
           </div>
-          <div class="book-card">
-            <div class="heading">
-              <h3 class="heading_book-card">Staff Picks</h3>
-            </div>
-            <p class="paragraph paragraph--start">
-              The Last Queen <br /><span>By Clive Irving</span>
-            </p>
-            <p class="paragraph paragraph--start">
+          <div class="book">
+            <span class="book__tag">Staff Picks </span>
+            <h3 class="book__title">The Last Queen</h3>
+            <span class="book__title_author">By Clive Irving</span>
+            <p class="book__description">
               A timely and revelatory new biography of Queen Elizabeth (and her
               family) exploring how the Windsors have evolved and thrived as the
               modern world has changed around them.
             </p>
-            <button class="btn">Buy</button>
+            <button class="book__button btn disabled">Own</button>
             <img
-              class="book-img"
+              class="book__img"
               src="../src/source/images/favourites/4-the-last-queen.png"
               alt="Photo of 'The Last Queen' cover"
             />
+            <div class="book__border"></div>
           </div>
         </div>
       </section>
@@ -312,18 +339,12 @@
         </div>
         <div class="section__contacts_info">
           <div class="section__contacts_address">
-            <p class="paragraph paragraph--start">For all Library inquiries:</p>
-            <p class="paragraph paragraph--start">Please call (617) 730-2370</p>
-            <p class="paragraph paragraph--start">
-              For TTY service, please call (617) 730-2370
-            </p>
-            <p class="paragraph paragraph--start">
-              Putterham Library: (617) 730-2385
-            </p>
-            <p class="paragraph paragraph--start">Senior Staff</p>
-            <p class="paragraph paragraph--start">
-              Library Director: Amanda Hirst
-            </p>
+            <p class="paragraph">For all Library inquiries:</p>
+            <p class="paragraph">Please call (617) 730-2370</p>
+            <p class="paragraph">For TTY service, please call (617) 730-2370</p>
+            <p class="paragraph">Putterham Library: (617) 730-2385</p>
+            <p class="paragraph">Senior Staff</p>
+            <p class="paragraph">Library Director: Amanda Hirst</p>
           </div>
           <div class="section__contacts_map">
             <img
@@ -377,7 +398,7 @@
       <div class="footer__info">
         <div class="footer__info_contacts">
           <div class="footer__info_contacts-address">
-            <p class="paragraph paragraph--start paragraph--start-footer">
+            <p class="paragraph paragraph--start-footer">
               286 Cadman Plaza, New York, <br />NY 11238, United States
             </p>
           </div>
@@ -400,11 +421,11 @@
           </div>
         </div>
         <div class="footer__info_schedule">
-          <p class="paragraph paragraph--start paragraph--end-footer">
+          <p class="paragraph paragraph--end-footer">
             Mon - Fri <br />
             08:00 am - 07:00 pm
           </p>
-          <p class="paragraph paragraph--start paragraph--end-footer">
+          <p class="paragraph paragraph--end-footer">
             Sat - Sun <br />
             10:00 am - 06:00 pm
           </p>

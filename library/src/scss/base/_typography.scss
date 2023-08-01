@@ -1,8 +1,11 @@
 @use "../abstracts" as *;
 
-// font-family
-// letter-spacing
-// letter size
+@mixin text($font-size, $font-weight, $letter-spacing, $text-transform) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  letter-spacing: $letter-spacing;
+  text-transform: $text-transform;
+}
 
 .text--light {
   color: $color-text-light;
@@ -15,15 +18,12 @@
 }
 
 .primary-title {
+  @include text(4rem, 400, 0.3rem, uppercase);
   display: flex;
   flex-direction: column;
   text-align: center;
   font-family: Forum;
-  font-size: 4rem;
-  font-weight: 400;
   line-height: 5rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
   padding: 0 8rem;
 
   & span:first-child {
@@ -36,14 +36,10 @@
 }
 
 .section-title {
-  display: inline-block;
+  @include text(4rem, 400, 0.2rem, capitalize);
   color: $color-secondary;
   font-family: Forum;
-  font-size: 4rem;
-  font-weight: 400;
-  line-height: 4rem; /* 100% */
-  letter-spacing: 2px;
-  text-transform: capitalize;
+  display: inline-block;
   text-align: center;
   position: relative;
   padding-bottom: 6.1rem;
@@ -60,50 +56,18 @@
 }
 
 .heading-tertiary--coffee {
+  @include text(4rem, 400, 0.2rem, capitalize);
   color: $color-primary;
   font-family: Forum;
-  font-size: 4rem;
-  font-weight: 400;
-  line-height: 4rem; /* 100% */
-  letter-spacing: 2px;
-  text-transform: capitalize;
   padding-bottom: 4rem;
   padding-top: 4rem;
 }
 
-.heading_book-card {
-  display: inline-block;
-  color: $color-text-dark;
-  font-family: Forum;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 4rem; /* 200% */
-  letter-spacing: 2px;
-  text-transform: capitalize;
-  position: relative;
-  text-align: left;
-  padding-bottom: 2rem;
-
-  &::after {
-    content: "";
-    border-bottom: 1px solid $color-primary;
-    position: absolute;
-    width: 5rem;
-    height: 1px;
-    left: 0;
-    bottom: 2rem;
-  }
-}
-
 .paragraph {
-  color: $color-text-dark;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 4rem;
+  text-align: left;
 
-  &--start {
-    text-align: left;
+  &--center {
+    text-align: center;
   }
   &--end {
     text-align: right;
@@ -118,4 +82,82 @@
   &--footer {
     color: $color-text-light;
   }
+}
+.form-title {
+  line-height: 2rem;
+  font-weight: 700;
+}
+///////////////////////////////////////////////////////////////////////
+.book__tag {
+  font-family: Forum;
+  letter-spacing: 0.2rem;
+  text-transform: capitalize;
+}
+
+.book__title {
+  @include text(1.5rem, 700, 0.2rem, uppercase);
+  padding-top: 2rem;
+
+  &_author {
+    @include text(1.5rem, 700, 0.2rem, capitalize);
+  }
+}
+
+.book__description {
+  @include text(1.5rem, 400, 0.2rem, capitalize);
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  max-width: 65%;
+}
+
+.btn {
+  @include text(1rem, 700, 0.1rem, capitalize);
+  min-width: 7.5rem;
+  padding: 0.9rem 2.6rem;
+  border-radius: 0.2rem;
+  text-align: center;
+  line-height: 1rem;
+  background-color: $color-text-light;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  margin-top: auto;
+
+  &:hover {
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+  }
+  &:active {
+    background-color: $color-primary;
+    box-shadow: 3px 3px 3px 1px rgba($color-text-dark, 0.3);
+  }
+}
+
+.btn.disabled {
+  border: 1px solid $color-primary;
+  color: $color-primary;
+  background-color: $color-text-light;
+  cursor: not-allowed;
+}
+.book__button {
+  border: 1px solid $color-secondary;
+  color: $color-secondary;
+}
+
+.book__img {
+  position: absolute;
+  width: 20rem;
+  height: 30rem;
+  object-fit: cover;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+.book__border {
+  position: absolute;
+  width: 93.5%;
+  height: 100%;
+  border: 1px solid $color-text-dark;
+  left: 0;
+  top: 0;
+  pointer-events: none;
 }
