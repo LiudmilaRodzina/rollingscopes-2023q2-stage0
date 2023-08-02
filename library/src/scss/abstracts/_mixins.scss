@@ -8,3 +8,10 @@
     @content;
   }
 }
+
+@mixin text($font-size, $font-weight, $letter-spacing, $text-transform) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  letter-spacing: $letter-spacing;
+  text-transform: $text-transform;
+}

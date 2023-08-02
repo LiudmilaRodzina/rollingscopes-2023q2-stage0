@@ -1,0 +1,30 @@
+@use "../abstracts" as *;
+
+.slider {
+  display: flex;
+  flex-direction: column;
+}
+
+.slider__cards {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.9rem 0 2.8rem 0;
+}
+
+.slider__pagination {
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+}
+
+.pagination-dot {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background-color: $color-secondary;
+  cursor: pointer;
+}
+
+.active-dot {
+  background-color: $color-primary;
+}

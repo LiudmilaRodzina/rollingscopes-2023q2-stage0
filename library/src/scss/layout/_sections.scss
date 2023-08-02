@@ -1,6 +1,7 @@
 @use "../abstracts" as *;
 
 .section {
+  padding: 2rem 2rem 4rem 2rem;
   background-color: $color-text-light;
 }
 // WELCOME ////////////////////////////////////////////////////////////////////////////
@@ -15,46 +16,14 @@
     max-width: 61rem;
     padding: 3.5rem 4rem;
     background-color: $color-secondary;
-    margin-top: 22rem;
+    margin-top: 20rem;
     position: absolute;
+    left: 0;
   }
 }
-
 // ABOUT ////////////////////////////////////////////////////////////////////////////
-.section__about {
-  padding: 2rem 2rem 4rem 2rem;
-}
-.slider {
-  display: flex;
-  flex-direction: column;
-}
-.slider__cards {
-  display: flex;
-  justify-content: space-between;
-  padding: 1.9rem 0 2.8rem 0;
-}
-
-.slider__pagination {
-  display: flex;
-  justify-content: center;
-  column-gap: 1rem;
-}
-
-.pagination-dot {
-  width: 1.6rem;
-  height: 1.6rem;
-  border-radius: 50%;
-  background-color: $color-secondary;
-  cursor: pointer;
-}
-.active-dot {
-  background-color: $color-primary;
-}
 
 // FAVORITES ////////////////////////////////////////////////////////////////////////////
-.section__favorites {
-  padding: 2rem 2rem 4rem 2rem;
-}
 .seasons {
   display: flex;
   align-items: center;
@@ -62,6 +31,7 @@
   margin-bottom: 3rem;
   margin-top: 3.6rem;
 }
+
 .season-select {
   display: flex;
   gap: 2rem;
@@ -81,7 +51,7 @@
   &__radio {
     width: 1.7rem;
     height: 1.7rem;
-    border: 2px solid black;
+    border: 2px solid $color-text-dark;
     border-radius: 50%;
     padding: 3px;
     margin-right: 2rem;
@@ -91,7 +61,7 @@
       width: 100%;
       height: 100%;
       display: block;
-      background-color: black;
+      background-color: $color-text-dark;
       border-radius: 50%;
       transform: scale(0);
       transition: transform 0.15s;
@@ -118,20 +88,20 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  // border: 1px solid $color-text-dark;
   padding: 1.5rem 2rem;
-
   height: 100%;
 }
+
 // COFFEE SHOP ////////////////////////////////////////////////////////////////////////////
-.section__coffeeshop {
-  padding: 2rem 2rem 4rem 2rem;
+.coffeeshop__description {
+  text-align: center;
+  letter-spacing: 2px;
 }
 
-.section__coffeeshop_menu {
+.coffeeshop__menu {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48rem;
+  gap: 52rem;
 }
 
 .menu__list {
@@ -141,16 +111,13 @@
 }
 
 .menu__list_item {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: max-content auto max-content;
   gap: 6rem;
+  align-items: center;
 }
 
 .menu__list_item-name {
-  color: $color-text-dark;
-  font-family: Inter;
-  font-size: 2rem;
-  font-weight: 400;
   line-height: 4rem;
   letter-spacing: 2px;
   text-transform: capitalize;
@@ -162,37 +129,27 @@
   width: 100%;
   margin-left: 2.5rem;
   background-color: $color-primary;
+  justify-self: end;
 }
 
 .menu__list_item-price {
   color: $color-text-dark;
-  font-family: Forum;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 4rem; /* 200% */
-  letter-spacing: 2px;
+  font-family: $serif;
+  line-height: 4rem;
+  letter-spacing: 0.2rem;
   text-transform: capitalize;
 }
 
 // OUR CONTACTS ////////////////////////////////////////////////////////////////////////////
-.section__contacts {
-  padding: 2rem 2rem 4rem 2rem;
-}
-
-.section__contacts_info {
+.contacts {
   display: grid;
   grid-template-columns: 1fr 1fr;
-}
-
-.section__contacts_address {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 // DIGITAL LIBRARY CARDS ////////////////////////////////////////////////////////////////////////////
-.section__cards {
-  padding: 2rem 2rem 4rem 2rem;
+.section__cards .section-title {
+  margin-top: -1rem;
 }
 
 .section__cards_info {
@@ -210,38 +167,18 @@
   max-width: 56rem;
 }
 
-.sign-in_card-name {
-  text-align: left;
-  color: $color-text-dark;
-  font-family: Forum;
-  font-size: 3rem;
-  font-weight: 400;
-  line-height: 5rem;
-  letter-spacing: 0.6px;
-  margin: 0;
-  margin-top: 1rem;
-}
-
-.card-input {
-  border: 1px solid $color-text-light;
-  border-radius: 1rem;
-  width: 52rem;
-  height: 6.6rem;
-  color: #8e8e8e;
-  font-family: Forum;
-  font-size: 3rem;
-  font-weight: 400;
-  line-height: 5rem;
-  letter-spacing: 0.6px;
-  padding-left: 2rem;
-  margin: 0;
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.form__sign-up {
+///////////////////////////////////
+.form__sign {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 3.5rem;
+}
+
+.form__check form {
+  border: 3px solid $color-primary;
+  padding: 2rem 1.8rem 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

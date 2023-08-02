@@ -51,12 +51,9 @@
         </h2>
       </div>
     </section>
-
     <main class="main">
       <section class="section section__about" id="about">
-        <div class="heading-underlined">
-          <h2 class="section-title">About</h2>
-        </div>
+        <h2 class="section-title">About</h2>
         <p class="section__about_text paragraph--center">
           The Brooklyn Library is a free workspace, a large number of books and
           a cozy coffee shop inside
@@ -99,9 +96,7 @@
         </div>
       </section>
       <section class="section section__favorites" id="favorites">
-        <div class="heading-underlined">
-          <h2 class="section-title">Favorites</h2>
-        </div>
+        <h2 class="section-title">Favorites</h2>
         <p class="paragraph form-title">Pick favorites of season</p>
         <form class="seasons">
           <!-- <div class="season-select">
@@ -164,7 +159,6 @@
             Autumn
           </label>
         </form>
-
         <div class="books">
           <div class="book">
             <span class="book__tag">Staff Picks </span>
@@ -177,7 +171,7 @@
               light Sapphic romance, and a strong, complex protagonist. Not for
               the faint of heart.
             </p>
-            <button class="book__button btn">Buy</button>
+            <button class="btn btn--small">Buy</button>
             <img
               class="book__img"
               src="../src/source/images/favourites/1-the-book-eaters.png"
@@ -195,7 +189,7 @@
               recovering from a breakup moves to a quaint town in upstate New
               York and befriends a beautiful witch.
             </p>
-            <button class="book__button btn">Buy</button>
+            <button class="btn btn--small">Buy</button>
             <img
               class="book__img"
               src="../src/source/images/favourites/2-cackle.png"
@@ -214,7 +208,7 @@
               into something of divine significance—an inspired introduction to
               Dante's main themes.
             </p>
-            <button class="book__button btn">Buy</button>
+            <button class="btn btn--small">Buy</button>
             <img
               class="book__img"
               src="../src/source/images/favourites/3-dante.png"
@@ -231,7 +225,7 @@
               family) exploring how the Windsors have evolved and thrived as the
               modern world has changed around them.
             </p>
-            <button class="book__button btn disabled">Own</button>
+            <button class="btn btn--small btn--disabled">Own</button>
             <img
               class="book__img"
               src="../src/source/images/favourites/4-the-last-queen.png"
@@ -242,20 +236,16 @@
         </div>
       </section>
       <section class="section section__coffeeshop" id="coffeeshop">
-        <div class="heading-underlined">
-          <h2 class="section-title">Coffee Shop</h2>
-        </div>
-        <p class="section__coffeeshop_text paragraph">
+        <h2 class="section-title">Coffee Shop</h2>
+        <p class="coffeeshop__description">
           In our library, we have of cozy coffee shop, welcoming in customers
-          with frothy cappuccinos and friendly conversation. you can get a
-          favorite book and read in coffee shop. Our barista to cook you best
+          with frothy cappuccinos and friendly conversation. You can get a
+          favorite book and read in coffee shop. our barista to cook you best
           coffee, and also you can try desserts from bakery.
         </p>
-        <div class="section__coffeeshop_menu">
-          <div class="section__coffeeshop_menu-drinks">
-            <div class="heading-coffeeshop">
-              <h3 class="heading-tertiary--coffee">Coffee & Tea</h3>
-            </div>
+        <div class="coffeeshop__menu">
+          <div class="coffeeshop__menu_drinks">
+            <h3 class="section-title--coffeeshop">Coffee & Tea</h3>
             <div class="menu">
               <ul class="menu__list">
                 <li class="menu__list_item">
@@ -264,69 +254,66 @@
                   <span class="menu__list_item-price">$3</span>
                 </li>
                 <li class="menu__list_item">
-                  <span class="menu__list_item-name">Cold Brew Coffee</span>
+                  <span class="menu__list_item-name">French Press Pot</span>
                   <span class="menu__list_item-border"></span>
-                  <span class="menu__list_item-price">$3</span>
+                  <span class="menu__list_item-price">$5</span>
                 </li>
                 <li class="menu__list_item">
-                  <span class="menu__list_item-name">Cold Brew Coffee</span>
+                  <span class="menu__list_item-name">Espresso</span>
                   <span class="menu__list_item-border"></span>
-                  <span class="menu__list_item-price">$3</span>
+                  <span class="menu__list_item-price">$2</span>
                 </li>
                 <li class="menu__list_item">
-                  <span class="menu__list_item-name">Cold Brew Coffee</span>
+                  <span class="menu__list_item-name">Cappuccino</span>
                   <span class="menu__list_item-border"></span>
-                  <span class="menu__list_item-price">$3</span>
+                  <span class="menu__list_item-price">$4</span>
                 </li>
                 <li class="menu__list_item">
-                  <span class="menu__list_item-name">Cold Brew Coffee</span>
+                  <span class="menu__list_item-name">Hot tea</span>
                   <span class="menu__list_item-border"></span>
-                  <span class="menu__list_item-price">$3</span>
+                  <span class="menu__list_item-price">$2</span>
                 </li>
                 <li class="menu__list_item">
-                  <span class="menu__list_item-name">Cold Brew Coffee</span>
+                  <span class="menu__list_item-name">Cold tea</span>
                   <span class="menu__list_item-border"></span>
-                  <span class="menu__list_item-price">$3</span>
+                  <span class="menu__list_item-price">$2</span>
                 </li>
               </ul>
             </div>
           </div>
-
-          <div class="section__coffeeshop_menu-desserts">
-            <div class="heading-coffeeshop">
-              <h3 class="heading-tertiary--coffee">Coffee & Tea</h3>
-            </div>
+          <div class="coffeeshop__menu_desserts">
+            <h3 class="section-title--coffeeshop">Desserts & Cakes</h3>
             <div class="menu">
               <ul class="menu__list">
                 <li class="menu__list_item">
-                  <span class="menu__list_item-name">Cold Brew Coffee</span>
+                  <span class="menu__list_item-name">Forest Gateau</span>
                   <span class="menu__list_item-border"></span>
-                  <span class="menu__list_item-price">$3</span>
+                  <span class="menu__list_item-price">$16</span>
                 </li>
                 <li class="menu__list_item">
-                  <span class="menu__list_item-name">Cold Brew Coffee</span>
+                  <span class="menu__list_item-name">Blue Moon</span>
                   <span class="menu__list_item-border"></span>
-                  <span class="menu__list_item-price">$3</span>
+                  <span class="menu__list_item-price">$16</span>
                 </li>
                 <li class="menu__list_item">
-                  <span class="menu__list_item-name">Cold Brew Coffee</span>
+                  <span class="menu__list_item-name">Truffle Cake</span>
                   <span class="menu__list_item-border"></span>
-                  <span class="menu__list_item-price">$3</span>
+                  <span class="menu__list_item-price">$18</span>
                 </li>
                 <li class="menu__list_item">
-                  <span class="menu__list_item-name">Cold Brew Coffee</span>
+                  <span class="menu__list_item-name">Chocolate Cake</span>
                   <span class="menu__list_item-border"></span>
-                  <span class="menu__list_item-price">$3</span>
+                  <span class="menu__list_item-price">$18</span>
                 </li>
                 <li class="menu__list_item">
-                  <span class="menu__list_item-name">Cold Brew Coffee</span>
+                  <span class="menu__list_item-name">Poet's Dream Cake</span>
                   <span class="menu__list_item-border"></span>
-                  <span class="menu__list_item-price">$3</span>
+                  <span class="menu__list_item-price">$16</span>
                 </li>
                 <li class="menu__list_item">
-                  <span class="menu__list_item-name">Cold Brew Coffee</span>
+                  <span class="menu__list_item-name">Pineapple Cake</span>
                   <span class="menu__list_item-border"></span>
-                  <span class="menu__list_item-price">$3</span>
+                  <span class="menu__list_item-price">$14</span>
                 </li>
               </ul>
             </div>
@@ -334,19 +321,39 @@
         </div>
       </section>
       <section class="section section__contacts" id="contacts">
-        <div class="heading-underlined">
-          <h2 class="section-title">Our Contacts</h2>
-        </div>
-        <div class="section__contacts_info">
-          <div class="section__contacts_address">
-            <p class="paragraph">For all Library inquiries:</p>
-            <p class="paragraph">Please call (617) 730-2370</p>
-            <p class="paragraph">For TTY service, please call (617) 730-2370</p>
-            <p class="paragraph">Putterham Library: (617) 730-2385</p>
-            <p class="paragraph">Senior Staff</p>
-            <p class="paragraph">Library Director: Amanda Hirst</p>
+        <h2 class="section-title">Our Contacts</h2>
+        <div class="contacts">
+          <div class="contacts__info">
+            <p>For all Library inquiries:</p>
+            <ul class="contacts__info_list list">
+              <li>
+                Please call
+                <a class="link text--dark" href="tel:(617) 730-2370"
+                  >(617) 730-2370</a
+                >
+              </li>
+              <li>
+                For TTY service, please call
+                <a class="link text--dark" href="tel:(617) 730-2370"
+                  >(617) 730-2370</a
+                >
+              </li>
+              <li>
+                Putterham Library:
+                <a class="link text--dark" href="tel:(617) 730-2385"
+                  >(617) 730-2385</a
+                >
+              </li>
+            </ul>
+            <p>Senior Staff</p>
+            <span>
+              Library Director:
+              <a class="link text--dark" href="mailto:AmandaHirst@bpl.com"
+                ><b>Amanda Hirst</b></a
+              >
+            </span>
           </div>
-          <div class="section__contacts_map">
+          <div class="contacts__map">
             <img
               class="map"
               src="../src/source/images/map.png"
@@ -356,15 +363,13 @@
         </div>
       </section>
       <section class="section section__cards" id="cards">
-        <div class="heading-underlined">
-          <h2 class="section-title">Digital Library Cards</h2>
-        </div>
+        <h2 class="section-title">Digital Library Cards</h2>
         <div class="section__cards_info">
-          <div class="form__sign-in">
-            <p class="paragraph">Find your Library card</p>
-            <form class="sign-in">
+          <div class="form__check">
+            <p class="form__check_name">Find your Library card</p>
+            <form class="form__check_card">
               <div class="input-card">
-                <div class="sign-in_card-name">Brooklyn Public Library</div>
+                <div class="form__check_card-name">Brooklyn Public Library</div>
                 <input
                   class="card-input"
                   type="text"
@@ -375,20 +380,20 @@
                   type="text"
                   placeholder="Card number"
                 />
-                <button>Check the card</button>
               </div>
+              <button class="btn btn--large">Check the card</button>
             </form>
           </div>
-          <div class="form__sign-up">
-            <p class="paragraph paragraph--end">Get a reader card</p>
-            <p class="paragraph paragraph--end">
+          <div class="form__sign">
+            <p class="form__sign_name">Get a reader card</p>
+            <p class="form__sign_text">
               You will be able to see a reader card after <br />
               logging into account or you can register a new <br />
               account
             </p>
             <div class="form__sign-up_buttons">
-              <button>Sign up</button>
-              <button>Log in</button>
+              <button class="btn btn--small form__sign--btn">Sign up</button>
+              <button class="btn btn--small form__sign--btn">Log in</button>
             </div>
           </div>
         </div>

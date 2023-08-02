@@ -1,11 +1,11 @@
 @use "components/buttons";
 @use "components/links";
+@use "components/slider";
+
 @use "layout/navigation";
 @use "layout/header";
 @use "layout/sections";
 @use "layout/footer";
-
-@use "abstracts/colors";
 
 @use "base/reset";
 @use "base/typography";
