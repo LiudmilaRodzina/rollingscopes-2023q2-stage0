@@ -45,30 +45,13 @@
   }
 }
 
-.paragraph {
-  text-align: left;
-
-  &--center {
-    text-align: center;
-  }
-  &--end {
-    text-align: right;
-  }
-  &--start-footer {
-    color: $color-text-light;
-  }
-  &--end-footer {
-    text-align: right;
-    color: $color-text-light;
-  }
-  &--footer {
-    color: $color-text-light;
-  }
-}
-
 .form-title {
   line-height: 2rem;
   font-weight: $font-weight-bold;
+}
+
+.section__about_text {
+  text-align: center;
 }
 ///////////////////////////////////////////////////////////////////////
 .book__tag {

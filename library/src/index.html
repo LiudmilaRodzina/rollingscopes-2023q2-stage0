@@ -54,7 +54,7 @@
     <main class="main">
       <section class="section section__about" id="about">
         <h2 class="section-title">About</h2>
-        <p class="section__about_text paragraph--center">
+        <p class="section__about_text">
           The Brooklyn Library is a free workspace, a large number of books and
           a cozy coffee shop inside
         </p>
@@ -97,7 +97,7 @@
       </section>
       <section class="section section__favorites" id="favorites">
         <h2 class="section-title">Favorites</h2>
-        <p class="paragraph form-title">Pick favorites of season</p>
+        <p class="form-title">Pick favorites of season</p>
         <form class="seasons">
           <!-- <div class="season-select">
             <input type="radio" id="winter" name="season" checked />
@@ -125,7 +125,7 @@
               id="winter"
               class="radio__input"
             />
-            <div class="radio__radio"></div>
+            <span class="radio__radio"></span>
             Winter
           </label>
           <label for="spring" class="radio">
@@ -135,7 +135,7 @@
               id="spring"
               class="radio__input"
             />
-            <div class="radio__radio"></div>
+            <span class="radio__radio"></span>
             Spring
           </label>
           <label for="summer" class="radio">
@@ -145,7 +145,7 @@
               id="summer"
               class="radio__input"
             />
-            <div class="radio__radio"></div>
+            <span class="radio__radio"></span>
             Summer
           </label>
           <label for="autumn" class="radio">
@@ -155,7 +155,7 @@
               id="autumn"
               class="radio__input"
             />
-            <div class="radio__radio"></div>
+            <span class="radio__radio"></span>
             Autumn
           </label>
         </form>
@@ -328,19 +328,19 @@
             <ul class="contacts__info_list list">
               <li>
                 Please call
-                <a class="link text--dark" href="tel:(617) 730-2370"
+                <a href="tel:(617)730-2370" class="link text--dark"
                   >(617) 730-2370</a
                 >
               </li>
               <li>
                 For TTY service, please call
-                <a class="link text--dark" href="tel:(617) 730-2370"
+                <a href="tel:(617)730-2370" class="link text--dark"
                   >(617) 730-2370</a
                 >
               </li>
               <li>
                 Putterham Library:
-                <a class="link text--dark" href="tel:(617) 730-2385"
+                <a href="tel:(617)730-2385" class="link text--dark"
                   >(617) 730-2385</a
                 >
               </li>
@@ -403,42 +403,58 @@
       <div class="footer__info">
         <div class="footer__info_contacts">
           <div class="footer__info_contacts-address">
-            <p class="paragraph paragraph--start-footer">
-              286 Cadman Plaza, New York, <br />NY 11238, United States
+            <p>
+              <a
+                href="https://goo.gl/maps/3mewMxLRNsx8qtoV6"
+                class="link text--light"
+                target="_blank"
+                >286 Cadman Plaza, New York, <br />NY 11238, United States</a
+              >
             </p>
           </div>
           <div class="footer__info_contacts-socials">
-            <img
-              class="icon-social"
-              src="../src/source/icons/u_twitter-alt.svg"
-              alt="twitter icon"
-            />
-            <img
-              class="icon-social"
-              src="../src/source/icons/u_instagram.svg"
-              alt="instagram icon"
-            />
-            <img
-              class="icon-social"
-              src="../src/source/icons/u_facebook-f.svg"
-              alt="facebook icon"
-            />
+            <ul class="social-links list">
+              <li>
+                <a href="https://twitter.com/?lang=eng" target="_blank">
+                  <img
+                    class="icon-social"
+                    src="../src/source/icons/u_twitter-alt.svg"
+                    alt="twitter icon"
+                /></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/" target="_blank">
+                  <img
+                    class="icon-social"
+                    src="../src/source/icons/u_instagram.svg"
+                    alt="instagram icon"
+                /></a>
+              </li>
+              <li>
+                <a href="https://facebook.com/" target="_blank">
+                  <img
+                    class="icon-social"
+                    src="../src/source/icons/u_facebook-f.svg"
+                    alt="facebook icon"
+                /></a>
+              </li>
+            </ul>
           </div>
         </div>
         <div class="footer__info_schedule">
-          <p class="paragraph paragraph--end-footer">
+          <p class="text--light">
             Mon - Fri <br />
             08:00 am - 07:00 pm
           </p>
-          <p class="paragraph paragraph--end-footer">
+          <p class="text--light">
             Sat - Sun <br />
             10:00 am - 06:00 pm
           </p>
         </div>
       </div>
       <div class="footer__copyright">
-        <p class="paragraph paragraph--footer">2023</p>
-        <p class="paragraph paragraph--footer">
+        <p class="text--light">2023</p>
+        <p class="">
           <a
             class="link text--light"
             href="https://rs.school/js-stage0/"
@@ -446,7 +462,7 @@
             >The Rolling Scopes School</a
           >
         </p>
-        <p class="paragraph paragraph--footer">
+        <p class="">
           <a
             class="link text--light"
             href="https://github.com/LiudmilaRodzina"

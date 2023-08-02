@@ -1,20 +1,44 @@
 @use "../abstracts" as *;
 
 .footer {
-  padding: 2rem 2rem 4rem 2rem;
+  padding: 2rem 2rem 2rem 2rem;
   background-color: $color-secondary;
 }
+
 .footer {
   &__info {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
     border-bottom: 1px solid $color-text-light;
+
+    &_schedule {
+      text-align: end;
+      font-size: 1.5rem;
+      line-height: 2rem;
+
+      & p {
+        margin-bottom: 1rem;
+      }
+    }
   }
 }
 
 .footer__copyright {
   display: flex;
   justify-content: space-between;
-  padding-top: 4.4rem;
+  padding-top: 3.5rem;
+  letter-spacing: 2px;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer__info_contacts-address {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 1.5rem;
 }
