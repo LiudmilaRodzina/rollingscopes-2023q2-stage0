@@ -1,3 +1,2 @@
 console.log("Спасибо большое за предоставленную возможность закончить работу! Вроде бы все пункты задания выполнены.");
-
-//# sourceMappingURL=index.aa69868b.js.map
+//# sourceMappingURL=index.632123d4.js.map

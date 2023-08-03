@@ -56,12 +56,23 @@
   border: 1px solid #bb945f;
 }
 
+.btn--disabled:hover {
+  cursor: not-allowed;
+  background-color: #fff;
+}
+
+.btn--disabled:active {
+  background-color: #fff;
+  box-shadow: 3px 3px 3px 1px #ffffff1a;
+}
+
 .list {
   list-style: none;
 }
 
 .link:link, .link:visited {
   text-decoration: none;
+  transition: all .3s ease-in-out;
   display: inline-block;
 }
 
@@ -100,6 +111,15 @@
   border-radius: 50%;
   width: 1.6rem;
   height: 1.6rem;
+  position: relative;
+}
+
+.pagination-dot:before {
+  content: "";
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  inset: -.5rem;
 }
 
 .active-dot {
@@ -458,6 +478,19 @@ body {
   letter-spacing: .2rem;
   text-transform: capitalize;
   font-family: Forum, serif;
+  display: block;
+  position: relative;
+}
+
+.book__tag:after {
+  content: "";
+  border-bottom: 1px solid #bb945f;
+  width: 6rem;
+  height: 1px;
+  position: absolute;
+  bottom: -.1rem;
+  left: 2.9rem;
+  transform: translateX(-50%);
 }
 
 .book__title {
