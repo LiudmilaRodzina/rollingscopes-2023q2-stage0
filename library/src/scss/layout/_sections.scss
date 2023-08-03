@@ -97,49 +97,67 @@
   text-align: center;
   letter-spacing: 2px;
 }
-
-.coffeeshop__menu {
+.coffeeshop__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 52rem;
+  gap: 46.2rem;
+}
+////////////////////////////
+
+.column--second {
+  width: 48.2rem;
+}
+.column--first div {
+  margin-right: 2.2rem;
 }
 
-.menu__list {
+.price-list__list {
   display: flex;
   flex-direction: column;
   gap: 4rem;
 }
 
-.menu__list_item {
-  display: grid;
-  grid-template-columns: max-content auto max-content;
-  gap: 6rem;
+.price-list__item {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-.menu__list_item-name {
-  line-height: 4rem;
+.price-list__description {
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+
+  max-width: 23.3rem;
+  width: 100%;
+}
+
+.price-list__line {
+  height: 1px;
+  max-width: 10rem;
+  width: 100%;
+  background-color: $color-primary;
+}
+
+.price-list__value {
+  color: #000;
+  font-family: Forum;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
   letter-spacing: 2px;
   text-transform: capitalize;
 }
 
-.menu__list_item-border {
-  height: 1px;
-  max-width: 10rem;
-  width: 100%;
-  margin-left: 2.5rem;
-  background-color: $color-primary;
-  justify-self: end;
+.column--second h4 {
+  text-align: right;
 }
-
-.menu__list_item-price {
-  color: $color-text-dark;
-  font-family: $serif;
-  line-height: 4rem;
-  letter-spacing: 0.2rem;
-  text-transform: capitalize;
-}
-
 // OUR CONTACTS ////////////////////////////////////////////////////////////////////////////
 .contacts {
   display: grid;

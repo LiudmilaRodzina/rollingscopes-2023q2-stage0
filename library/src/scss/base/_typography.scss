@@ -95,8 +95,8 @@
   top: 0;
   pointer-events: none;
 }
-////////////////////
-.section-title--coffeeshop {
+///////////////////////////////////////////////////////////////////////
+.price-list__title {
   @include text(4rem, $font-weight-normal, 0.2rem, capitalize);
   color: $color-primary;
   font-family: $serif;
@@ -104,11 +104,11 @@
   padding-top: 4rem;
 }
 
-.coffeeshop__menu_desserts .section-title--coffeeshop {
+.coffeeshop__column:last-child .price-list__title {
   text-align: end;
 }
 
-/////////////////////////////
+//////////////////////////////////////////////////////////////////////
 .contacts__info_list {
   display: flex;
   flex-direction: column;
