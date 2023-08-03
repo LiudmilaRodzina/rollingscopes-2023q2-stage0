@@ -51,4 +51,13 @@
   color: $color-primary;
   background-color: $color-text-light;
   cursor: not-allowed;
+
+  &:hover {
+    background-color: $color-text-light;
+    cursor: not-allowed;
+  }
+  &:active {
+    background-color: $color-text-light;
+    box-shadow: 3px 3px 3px 1px rgba($color-text-light, 0.1);
+  }
 }

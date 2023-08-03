@@ -58,6 +58,19 @@
   font-family: $serif;
   letter-spacing: 0.2rem;
   text-transform: capitalize;
+  position: relative;
+  display: block;
+
+  &::after {
+    content: "";
+    border-bottom: 1px solid $color-primary;
+    position: absolute;
+    width: 6rem;
+    height: 1px;
+    left: 2.9rem;
+    transform: translateX(-50%);
+    bottom: -0.1rem;
+  }
 }
 
 .book__title {

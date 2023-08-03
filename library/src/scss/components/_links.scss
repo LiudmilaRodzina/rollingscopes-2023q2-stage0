@@ -9,6 +9,7 @@
   &:visited {
     display: inline-block;
     text-decoration: none;
+    transition: all 0.3s ease-in-out;
   }
 
   &:hover {

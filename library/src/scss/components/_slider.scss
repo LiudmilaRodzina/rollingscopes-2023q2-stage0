@@ -24,6 +24,18 @@
   cursor: pointer;
   border-radius: 50%;
   background-color: $color-text-dark;
+  position: relative;
+}
+.pagination-dot:before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: -0.5rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  bottom: -0.5rem;
+  // background: rgba(255, 0, 0, 0.09);
+  border-radius: 50%;
 }
 
 .active-dot {
