@@ -231,46 +231,65 @@
   letter-spacing: 2px;
 }
 
-.coffeeshop__menu {
+.coffeeshop__content {
   grid-template-columns: 1fr 1fr;
-  gap: 52rem;
+  gap: 46.2rem;
   display: grid;
 }
 
-.menu__list {
+.column--second {
+  width: 48.2rem;
+}
+
+.column--first div {
+  margin-right: 2.2rem;
+}
+
+.price-list__list {
   flex-direction: column;
   gap: 4rem;
   display: flex;
 }
 
-.menu__list_item {
-  grid-template-columns: max-content auto max-content;
+.price-list__item {
+  justify-content: space-between;
   align-items: center;
-  gap: 6rem;
-  display: grid;
+  display: flex;
 }
 
-.menu__list_item-name {
+.price-list__description {
+  color: #000;
   letter-spacing: 2px;
   text-transform: capitalize;
-  line-height: 4rem;
+  width: 100%;
+  max-width: 23.3rem;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
 }
 
-.menu__list_item-border {
+.price-list__line {
   background-color: #bb945f;
-  justify-self: end;
   width: 100%;
   max-width: 10rem;
   height: 1px;
-  margin-left: 2.5rem;
 }
 
-.menu__list_item-price {
+.price-list__value {
   color: #000;
-  letter-spacing: .2rem;
+  letter-spacing: 2px;
   text-transform: capitalize;
-  font-family: Forum, serif;
-  line-height: 4rem;
+  font-family: Forum;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.column--second h4 {
+  text-align: right;
 }
 
 .contacts {
@@ -353,6 +372,10 @@
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.copyright {
+  margin-left: 13rem;
 }
 
 *, :before, :after {
@@ -491,7 +514,7 @@ body {
   left: 0;
 }
 
-.section-title--coffeeshop {
+.price-list__title {
   letter-spacing: .2rem;
   text-transform: capitalize;
   color: #bb945f;
@@ -502,7 +525,7 @@ body {
   font-weight: 400;
 }
 
-.coffeeshop__menu_desserts .section-title--coffeeshop {
+.coffeeshop__column:last-child .price-list__title {
   text-align: end;
 }
 
