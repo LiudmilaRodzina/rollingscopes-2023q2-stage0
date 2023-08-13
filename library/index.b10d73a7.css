@@ -1,8 +1,65 @@
 @import "https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap";
 @import "https://fonts.googleapis.com/css2?family=Forum&display=swap";
+.slider__pagination, .link:link, .link:visited, .btn {
+  transition: all .3s ease-in-out;
+}
+
+.logo {
+  letter-spacing: .6px;
+  font-family: Forum, serif;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 5rem;
+}
+
+.header__hamburger {
+  display: none;
+}
+
+@media (width <= 1024px) {
+  .header__hamburger {
+    cursor: pointer;
+    width: 4.5rem;
+    height: 2rem;
+    display: block;
+    position: relative;
+  }
+}
+
+.header__hamburger:before, .header__hamburger:after, .header__hamburger span {
+  background-color: #fff;
+  width: 100%;
+  height: .2rem;
+  position: absolute;
+  left: 0;
+}
+
+.header__hamburger:before, .header__hamburger:after {
+  content: "";
+}
+
+.header__hamburger:before {
+  top: 0;
+}
+
+.header__hamburger:after {
+  bottom: 0;
+}
+
+.header__hamburger span {
+  top: calc(50% - 1px);
+  transform: scale(1)translate(0, -50%);
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
 .btn {
-  letter-spacing: .1rem;
   text-transform: capitalize;
+  letter-spacing: .1rem;
   text-align: center;
   color: #0c0c0e;
   cursor: pointer;
@@ -14,8 +71,7 @@
   padding: .9rem 2.6rem;
   font-size: 1rem;
   font-weight: 700;
-  line-height: 1rem;
-  transition: all .3s ease-in-out;
+  line-height: normal;
 }
 
 .btn:hover {
@@ -28,16 +84,15 @@
   box-shadow: 3px 3px 3px 1px #0000004d;
 }
 
-.btn--large {
-  letter-spacing: 1px;
+.btn-large {
   text-transform: none;
+  letter-spacing: .1rem;
   min-width: 24.2rem;
-  margin-top: 2.3rem;
+  margin-top: 2rem;
   padding: 1rem 4rem;
-  font-family: Inter, sans-serif;
   font-size: 2rem;
   font-weight: 700;
-  line-height: 2rem;
+  line-height: normal;
 }
 
 .form__sign-up_buttons {
@@ -45,23 +100,23 @@
   display: flex;
 }
 
-.form__sign--btn {
+.form__sign-btn {
   padding: .9rem 1.5rem;
 }
 
-.btn--disabled {
+.btn-disabled {
   color: #bb945f;
   cursor: not-allowed;
   background-color: #fff;
   border: 1px solid #bb945f;
 }
 
-.btn--disabled:hover {
+.btn-disabled:hover {
   cursor: not-allowed;
   background-color: #fff;
 }
 
-.btn--disabled:active {
+.btn-disabled:active {
   background-color: #fff;
   box-shadow: 3px 3px 3px 1px #ffffff1a;
 }
@@ -72,7 +127,6 @@
 
 .link:link, .link:visited {
   text-decoration: none;
-  transition: all .3s ease-in-out;
   display: inline-block;
 }
 
@@ -87,21 +141,57 @@
   text-decoration: none;
 }
 
-.slider {
+.slider-container {
   flex-direction: column;
   display: flex;
 }
 
+@media (width <= 768px) {
+  .slider-container {
+    flex-direction: row;
+  }
+}
+
 .slider__cards {
   justify-content: space-between;
-  padding: 1.9rem 0 2.8rem;
+  gap: 1rem;
+  padding: 1.9rem 0 4rem;
   display: flex;
+}
+
+@media (width <= 768px) {
+  .slider__cards {
+    align-self: center;
+    padding-bottom: 2.5rem;
+  }
+
+  .card-hidden {
+    display: none;
+  }
+}
+
+.slider__card_img {
+  object-fit: cover;
+  flex-wrap: wrap;
+  max-width: 100%;
+  display: flex;
+}
+
+.slider__arrow {
+  display: none;
+}
+
+@media (width <= 768px) {
+  .slider__arrow {
+    flex: 1;
+    padding-top: 2.6rem;
+    display: block;
+  }
 }
 
 .slider__pagination {
   justify-content: center;
   column-gap: 1rem;
-  transition: all 2s ease-in-out;
   display: flex;
 }
 
@@ -112,6 +202,16 @@
   width: 1.6rem;
   height: 1.6rem;
   position: relative;
+}
+
+.dot-hidden {
+  display: none;
+}
+
+@media (width <= 768px) {
+  .dot-hidden {
+    display: block;
+  }
 }
 
 .pagination-dot:before {
@@ -126,7 +226,14 @@
   background-color: #bb945f;
 }
 
+@media (width <= 1024px) {
+  .navigation {
+    display: none;
+  }
+}
+
 .header__navigation {
+  justify-content: space-between;
   align-items: center;
   gap: 4rem;
   display: flex;
@@ -148,14 +255,6 @@
   display: flex;
 }
 
-.logo {
-  letter-spacing: .6px;
-  font-family: Forum, serif;
-  font-size: 3rem;
-  font-weight: 400;
-  line-height: 5rem;
-}
-
 .header__icon {
   padding-top: 1rem;
 }
@@ -170,7 +269,7 @@
   background-image: url("welcome.a7cb6deb.png"), linear-gradient(#0c0c0e 0% .01%, #1212151a 100%);
   background-position: 0 0, 0 0;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-attachment: scroll, scroll;
   background-origin: padding-box, padding-box;
   background-clip: border-box, border-box;
@@ -238,10 +337,21 @@
 
 .books {
   grid-template-columns: 1fr 1fr;
-  justify-content: start;
-  align-items: start;
   gap: 4rem 22rem;
   display: grid;
+}
+
+@media (width <= 1024px) {
+  .books {
+    column-gap: 6rem;
+  }
+}
+
+@media (width <= 768px) {
+  .books {
+    grid-template-columns: 1fr;
+    margin: 0 7rem;
+  }
 }
 
 .book {
@@ -251,6 +361,33 @@
   padding: 1.5rem 2rem;
   display: flex;
   position: relative;
+}
+
+@media (width <= 768px) {
+  .book {
+    max-width: 75rem;
+    min-height: 55.5rem;
+  }
+}
+
+.book__img {
+  object-fit: cover;
+  z-index: 2;
+  width: 20rem;
+  height: 30rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.book__border {
+  pointer-events: none;
+  border: 1px solid #000;
+  width: 93.5%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .coffeeshop__description {
@@ -264,12 +401,39 @@
   display: grid;
 }
 
-.column--second {
+@media (width <= 768px) {
+  .coffeeshop__content {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .coffeeshop__column {
+    width: 66%;
+  }
+}
+
+.column-first div {
+  margin-right: 2.2rem;
+}
+
+@media (width <= 768px) {
+  .column-first div {
+    margin-right: 4.6rem;
+  }
+}
+
+.column-second {
   width: 48.2rem;
 }
 
-.column--first div {
-  margin-right: 2.2rem;
+@media (width <= 768px) {
+  .column-second {
+    margin-left: 24.6rem;
+  }
+}
+
+.column-second h4 {
+  text-align: right;
 }
 
 .price-list__list {
@@ -285,11 +449,10 @@
 }
 
 .price-list__description {
-  letter-spacing: 2px;
+  letter-spacing: .2rem;
   text-transform: capitalize;
   width: 100%;
   max-width: 23.3rem;
-  font-family: Inter;
   font-weight: 400;
 }
 
@@ -297,23 +460,38 @@
   background-color: #bb945f;
   width: 100%;
   max-width: 10rem;
-  height: 1px;
+  height: .1rem;
 }
 
 .price-list__value {
-  letter-spacing: 2px;
+  letter-spacing: .2rem;
   text-transform: capitalize;
-  font-family: Forum;
-}
-
-.column--second h4 {
-  text-align: right;
+  font-family: Forum, serif;
 }
 
 .contacts {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   display: grid;
+}
+
+@media (width <= 1024px) {
+  .contacts {
+    grid-template-columns: 1fr;
+    gap: 10rem;
+  }
+}
+
+.contacts__map img {
+  object-fit: cover;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+@media (width <= 768px) {
+  .contacts__map img {
+    padding-left: 1.7rem;
+  }
 }
 
 .section__cards .section-title {
@@ -323,6 +501,13 @@
 .section__cards_info {
   justify-content: space-between;
   display: flex;
+}
+
+@media (width <= 768px) {
+  .section__cards_info {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .input-card {
@@ -335,21 +520,44 @@
   display: inline-block;
 }
 
-.form__sign {
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 3.5rem;
-  display: flex;
+@media (width <= 768px) {
+  .form__check {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2.3rem;
+    display: flex;
+  }
 }
 
 .form__check form {
   border: 3px solid #bb945f;
   flex-direction: column;
   align-items: center;
-  margin-bottom: .3rem;
-  padding: 2rem 1.8rem 2.5rem 2rem;
+  padding: 2rem 1.6rem 2.5rem 1.8rem;
   display: flex;
   box-shadow: 0 4px 4px #00000040;
+}
+
+@media (width <= 768px) {
+  .form__check form {
+    max-width: 60rem;
+  }
+}
+
+.form__sign {
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3.5rem;
+  max-width: 45.6rem;
+  display: flex;
+}
+
+@media (width <= 768px) {
+  .form__sign {
+    align-items: center;
+    gap: 4rem;
+    max-width: 60rem;
+  }
 }
 
 .footer {
@@ -377,7 +585,7 @@
 .footer__copyright {
   letter-spacing: 2px;
   justify-content: space-between;
-  padding-top: 3.5rem;
+  padding-top: 3.3rem;
   display: flex;
 }
 
@@ -394,7 +602,13 @@
 }
 
 .copyright {
-  margin-left: 13rem;
+  margin-left: 14rem;
+}
+
+@media (width <= 768px) {
+  .copyright {
+    margin-left: 8rem;
+  }
 }
 
 *, :before, :after {
@@ -410,6 +624,7 @@ html {
 
 body {
   box-sizing: border-box;
+  text-transform: none;
   color: #000;
   background-color: #8e8e8e1a;
   max-width: 144rem;
@@ -420,21 +635,21 @@ body {
   line-height: 4rem;
 }
 
-.text--light {
+.text-light {
   color: #fff;
 }
 
-.text--dark {
+.text-dark {
   color: #0c0c0e;
 }
 
-.text--black {
+.text-black {
   color: #000;
 }
 
 .primary-title {
-  letter-spacing: .3rem;
   text-transform: uppercase;
+  letter-spacing: .3rem;
   text-align: center;
   flex-direction: column;
   padding: 0 8rem;
@@ -450,15 +665,15 @@ body {
 }
 
 .section-title {
+  text-transform: capitalize;
   letter-spacing: .2rem;
-  text-transform: capitalize;
   color: #0c0c0e;
-  text-transform: capitalize;
   text-align: center;
   padding-bottom: 6.1rem;
   font-family: Forum, serif;
   font-size: 4rem;
   font-weight: 400;
+  line-height: 4rem;
   position: relative;
 }
 
@@ -474,6 +689,8 @@ body {
 }
 
 .form-title {
+  text-transform: none;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 2rem;
 }
@@ -483,9 +700,12 @@ body {
 }
 
 .book__tag {
-  letter-spacing: .2rem;
   text-transform: capitalize;
+  letter-spacing: .2rem;
   font-family: Forum, serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 4rem;
   display: block;
   position: relative;
 }
@@ -502,59 +722,43 @@ body {
 }
 
 .book__title {
-  letter-spacing: .2rem;
   text-transform: uppercase;
+  letter-spacing: .2rem;
   padding-top: 2rem;
   font-size: 1.5rem;
   font-weight: 700;
+  line-height: 4rem;
 }
 
 .book__title_author {
-  letter-spacing: .2rem;
   text-transform: capitalize;
+  letter-spacing: .2rem;
   font-size: 1.5rem;
   font-weight: 700;
+  line-height: 4rem;
 }
 
 .book__description {
-  letter-spacing: .2rem;
   text-transform: capitalize;
+  letter-spacing: .2rem;
   max-width: 65%;
   padding-top: 2rem;
   padding-bottom: 1.5rem;
   font-size: 1.5rem;
   font-weight: 400;
-}
-
-.book__img {
-  object-fit: cover;
-  z-index: 2;
-  width: 20rem;
-  height: 30rem;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
-.book__border {
-  pointer-events: none;
-  border: 1px solid #000;
-  width: 93.5%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  line-height: 4rem;
 }
 
 .price-list__title {
-  letter-spacing: .2rem;
   text-transform: capitalize;
+  letter-spacing: .2rem;
   color: #bb945f;
   padding-top: 4rem;
   padding-bottom: 4rem;
   font-family: Forum, serif;
   font-size: 4rem;
   font-weight: 400;
+  line-height: 4rem;
 }
 
 .coffeeshop__column:last-child .price-list__title {
@@ -562,7 +766,7 @@ body {
 }
 
 .contacts__info_list {
-  letter-spacing: 2px;
+  letter-spacing: .2rem;
   text-transform: capitalize;
   flex-direction: column;
   gap: 2rem;
@@ -571,35 +775,47 @@ body {
 }
 
 .contacts__info > p {
-  letter-spacing: 2px;
   text-transform: capitalize;
+  letter-spacing: .2rem;
   margin-bottom: 2rem;
+  font-size: 2rem;
   font-weight: 700;
+  line-height: 4rem;
 }
 
 .contacts__info > span {
-  letter-spacing: 2px;
+  letter-spacing: .2rem;
   text-transform: capitalize;
 }
 
 .form__check_name {
+  text-transform: none;
   letter-spacing: .6px;
   text-align: center;
   margin-bottom: 3rem;
   font-size: 3rem;
+  font-weight: 400;
   line-height: 3rem;
 }
 
 .form__sign_name {
+  text-transform: none;
   letter-spacing: .6px;
   font-family: Forum, serif;
   font-size: 3rem;
+  font-weight: 400;
   line-height: 3rem;
 }
 
 .form__sign_text {
   text-align: right;
   letter-spacing: .4px;
+}
+
+@media (width <= 768px) {
+  .form__sign_text {
+    text-align: center;
+  }
 }
 
 .form__check_card-name {
@@ -610,6 +826,7 @@ body {
 }
 
 .card-input {
+  text-transform: none;
   color: #8e8e8e;
   letter-spacing: .6px;
   border: 1px solid #fff;
@@ -620,6 +837,7 @@ body {
   padding-left: 2rem;
   font-family: Forum, serif;
   font-size: 3rem;
+  font-weight: 400;
   line-height: 5rem;
 }
 
