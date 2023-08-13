@@ -11,6 +11,13 @@
   transition: all 0.3s ease-in-out;
 }
 
+@mixin media-desktop {
+  // 1366px
+  @media (max-width: $desktop-width) {
+    @content;
+  }
+}
+
 @mixin media-tablet-land {
   // 1024px
   @media (max-width: $tablet-land-width) {
@@ -21,6 +28,12 @@
 @mixin media-tablet-port {
   // 768px
   @media (max-width: $tablet-port-width) {
+    @content;
+  }
+}
+@mixin media-mobile-large {
+  // 761px
+  @media (max-width: $mobile-large-width) {
     @content;
   }
 }
