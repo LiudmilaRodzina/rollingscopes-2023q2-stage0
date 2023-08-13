@@ -184,7 +184,7 @@ button {
 @media (width <= 768px) {
   .slider__arrow {
     flex: 1;
-    padding-top: 2.6rem;
+    padding-top: 3.6rem;
     display: block;
   }
 }
@@ -294,6 +294,13 @@ button {
   display: flex;
 }
 
+@media (width <= 761px) {
+  .seasons {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
 .season-select {
   gap: 2rem;
   display: flex;
@@ -304,6 +311,12 @@ button {
   align-items: center;
   margin-right: 6rem;
   display: inline-flex;
+}
+
+@media (width <= 761px) {
+  .radio {
+    margin-right: 3rem;
+  }
 }
 
 .radio__input {
@@ -341,16 +354,17 @@ button {
   display: grid;
 }
 
-@media (width <= 1024px) {
+@media (width <= 1366px) {
   .books {
-    column-gap: 6rem;
+    grid-template-columns: 1fr;
+    column-gap: 3rem;
+    margin: 0 7rem;
   }
 }
 
-@media (width <= 768px) {
+@media (width <= 761px) {
   .books {
-    grid-template-columns: 1fr;
-    margin: 0 7rem;
+    margin: 1rem;
   }
 }
 
@@ -401,14 +415,27 @@ button {
   display: grid;
 }
 
-@media (width <= 768px) {
+@media (width <= 1366px) {
   .coffeeshop__content {
     grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+
+@media (width <= 768px) {
+  .coffeeshop__content {
     gap: 0;
   }
 
   .coffeeshop__column {
+    gap: 0;
     width: 66%;
+  }
+}
+
+@media (width <= 761px) {
+  .coffeeshop__column {
+    width: 100%;
   }
 }
 
@@ -422,18 +449,60 @@ button {
   }
 }
 
+@media (width <= 761px) {
+  .column-first div {
+    margin-right: 0;
+  }
+}
+
 .column-second {
+  text-align: right;
   width: 48.2rem;
+}
+
+@media (width <= 1366px) {
+  .column-second {
+    text-align: left;
+    width: 100%;
+  }
 }
 
 @media (width <= 768px) {
   .column-second {
+    text-align: right;
+    width: 48.2rem;
     margin-left: 24.6rem;
   }
 }
 
-.column-second h4 {
-  text-align: right;
+@media (width <= 761px) {
+  .column-second {
+    text-align: left;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.coffeeshop__column:last-child .price-list__title {
+  text-align: end;
+}
+
+@media (width <= 1366px) {
+  .coffeeshop__column:last-child .price-list__title {
+    text-align: start;
+  }
+}
+
+@media (width <= 768px) {
+  .coffeeshop__column:last-child .price-list__title {
+    text-align: end;
+  }
+}
+
+@media (width <= 761px) {
+  .coffeeshop__column:last-child .price-list__title {
+    text-align: start;
+  }
 }
 
 .price-list__list {
@@ -494,6 +563,12 @@ button {
   }
 }
 
+@media (width <= 761px) {
+  .contacts__map img {
+    padding-left: 0;
+  }
+}
+
 .section__cards .section-title {
   margin-top: -1rem;
 }
@@ -503,7 +578,7 @@ button {
   display: flex;
 }
 
-@media (width <= 768px) {
+@media (width <= 1366px) {
   .section__cards_info {
     flex-direction: column;
     align-items: center;
@@ -520,7 +595,7 @@ button {
   display: inline-block;
 }
 
-@media (width <= 768px) {
+@media (width <= 1366px) {
   .form__check {
     flex-direction: column;
     align-items: center;
@@ -538,7 +613,7 @@ button {
   box-shadow: 0 4px 4px #00000040;
 }
 
-@media (width <= 768px) {
+@media (width <= 1366px) {
   .form__check form {
     max-width: 60rem;
   }
@@ -552,7 +627,7 @@ button {
   display: flex;
 }
 
-@media (width <= 768px) {
+@media (width <= 1366px) {
   .form__sign {
     align-items: center;
     gap: 4rem;
@@ -587,6 +662,12 @@ button {
   justify-content: space-between;
   padding-top: 3.3rem;
   display: flex;
+}
+
+@media (width <= 761px) {
+  .footer__copyright {
+    font-size: 1.6rem;
+  }
 }
 
 .social-links {
@@ -761,10 +842,6 @@ body {
   line-height: 4rem;
 }
 
-.coffeeshop__column:last-child .price-list__title {
-  text-align: end;
-}
-
 .contacts__info_list {
   letter-spacing: .2rem;
   text-transform: capitalize;
@@ -812,7 +889,7 @@ body {
   letter-spacing: .4px;
 }
 
-@media (width <= 768px) {
+@media (width <= 1366px) {
   .form__sign_text {
     text-align: center;
   }

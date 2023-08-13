@@ -1,1 +1,1 @@
-{"mappings":"AAAA,QAAQ,IACN","sources":["src/js/main.js"],"sourcesContent":["console.log(\r\n  \"Спасибо большое за предоставленную возможность закончить работу! Вроде бы все пункты задания выполнены.\"\r\n);\r\n"],"names":[],"version":3,"file":"index.aa69868b.js.map","sourceRoot":"/__parcel_source_root/"}
+{"mappings":"AAAA,QAAQ,IAAI","sources":["src/js/main.js"],"sourcesContent":["console.log(\"Add responsive 768px\\nAdd adaptive 1440-640px\");\r\n"],"names":[],"version":3,"file":"index.aa69868b.js.map","sourceRoot":"/__parcel_source_root/"}
