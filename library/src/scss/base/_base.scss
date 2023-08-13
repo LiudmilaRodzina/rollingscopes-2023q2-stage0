@@ -17,10 +17,8 @@ body {
   max-width: 144rem;
   box-sizing: border-box;
   margin: 0 auto;
-  font-family: $sans-serif;
-  font-weight: $font-weight-normal;
-  font-size: $font-size-normal;
-  line-height: $line-height-normal;
+  @include text($size: 2rem, $height: 4rem, $weight: 400, $transform: none);
+  font-family: $font-prim;
   color: $color-text-dark;
   background-color: rgba($color-grey, 0.1);
 }

@@ -1,6 +1,8 @@
+
+
 // FONT-FACE
-$sans-serif: "Inter", sans-serif;
-$serif: "Forum", serif;
+$font-prim: "Inter", sans-serif;
+$font-add: "Forum", serif;
 
 // COLORS
 $color-primary: #bb945f;
@@ -9,12 +11,46 @@ $color-text-dark: #000;
 $color-text-light: #fff;
 $color-grey: #8e8e8e;
 
-// FONT-WEIGHT
-$font-weight-normal: 400;
-$font-weight-bold: 700;
+$tablet-land-width: 1024px;
+$tablet-port-width: 768px;
+$mobile-big-width: 414px;
+$mobile-small-width: 320px;
 
-// LINE-HEIGHT
-$line-height-normal: 4rem;
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:     Phone
+600 - 900px:   Tablet portrait
+900 - 1200px:  Tablet landscape
+[1200 - 1800]  is where our normal styles apply
+1800px +:        Big desktops 
 
-// FONT-SIZE
-$font-size-normal: 2rem;
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+/*@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      // 600px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      // 900px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      // 1200px
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      // 1800px
+      @content;
+    }
+  }
+}*/

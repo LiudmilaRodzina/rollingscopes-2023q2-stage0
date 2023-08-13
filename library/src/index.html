@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside "
+      content="The Brooklyn Library is a free workspace, a large number of books and a cozy  
+               coffee shop inside. Enjoy your favorite book in a serene and quiet atmosphere "
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./scss/main.scss" />
@@ -20,19 +21,19 @@
     <header class="header">
       <div class="header__logo">
         <h1 class="logo">
-          <a class="link text--light" href="#">Brooklyn Public Library</a>
+          <a class="link text-light" href="#">Brooklyn Public Library</a>
         </h1>
       </div>
       <div class="header__navigation">
         <nav class="navigation">
           <ul class="navigation__items list">
-            <li><a class="link text--light" href="#about">About</a></li>
-            <li><a class="link text--light" href="#favorites">Favorites</a></li>
+            <li><a class="link text-light" href="#about">About</a></li>
+            <li><a class="link text-light" href="#favorites">Favorites</a></li>
             <li>
-              <a class="link text--light" href="#coffeeshop">Coffee shop</a>
+              <a class="link text-light" href="#coffeeshop">Coffee shop</a>
             </li>
-            <li><a class="link text--light" href="#contacts">Contacts</a></li>
-            <li><a class="link text--light" href="#cards">Library Card</a></li>
+            <li><a class="link text-light" href="#contacts">Contacts</a></li>
+            <li><a class="link text-light" href="#cards">Library Card</a></li>
           </ul>
         </nav>
         <div class="header__icon">
@@ -40,17 +41,22 @@
             ><img src="../src/source/icons/icon_profile.svg" alt="profile icon"
           /></a>
         </div>
+        <div class="header__hamburger _active">
+          <!-- <span class="hamburger"><span class="hamburger__line"></span></span> -->
+          <span></span>
+        </div>
       </div>
     </header>
     <section class="section section__welcome">
       <div class="section__welcome_heading">
-        <h2 class="primary-title text--light">
+        <h2 class="primary-title text-light">
           <span>Welcome</span>
           <span>to the Brooklyn</span>
           Library
         </h2>
       </div>
     </section>
+
     <main class="main">
       <section class="section section__about" id="about">
         <h2 class="section-title">About</h2>
@@ -59,28 +65,39 @@
           a cozy coffee shop inside
         </p>
         <div class="slider">
-          <div class="slider__cards">
-            <div class="slider__card">
-              <img
-                src="../src/source/images/about-1.png"
-                alt="Photo of a lady looking for a book on a library shelf"
-                class=""
-              />
+          <div class="slider-container">
+            <button class="slider__arrow">
+              <img src="../src/source/icons/arrow_left.svg" alt="left arrow" />
+            </button>
+            <div class="slider__cards">
+              <div class="slider__card">
+                <img
+                  src="../src/source/images/about-1.png"
+                  alt="Photo of a lady looking for a book on a library shelf"
+                  class="slider__card_img"
+                />
+              </div>
+              <div class="slider__card card-hidden">
+                <img
+                  src="../src/source/images/about-2.png"
+                  alt="Photo of marble busts inside a library"
+                  class="slider__card_img"
+                />
+              </div>
+              <div class="slider__card card-hidden">
+                <img
+                  src="../src/source/images/about-3.png"
+                  alt="Panoramic view of library interior"
+                  class="slider__card_img"
+                />
+              </div>
             </div>
-            <div class="slider__card">
+            <button class="slider__arrow">
               <img
-                src="../src/source/images/about-2.png"
-                alt="Photo of marble busts inside a library"
-                class=""
+                src="../src/source/icons/arrow_right.svg"
+                alt="right arrow"
               />
-            </div>
-            <div class="slider__card">
-              <img
-                src="../src/source/images/about-3.png"
-                alt="Panoramic view of library interior"
-                class=""
-              />
-            </div>
+            </button>
           </div>
           <div class="slider__pagination">
             <div class="pagination-dot active-dot">
@@ -90,6 +107,12 @@
               <span class="pagination-dot__content"></span>
             </div>
             <div class="pagination-dot">
+              <span class="pagination-dot__content"></span>
+            </div>
+            <div class="pagination-dot dot-hidden">
+              <span class="pagination-dot__content"></span>
+            </div>
+            <div class="pagination-dot dot-hidden">
               <span class="pagination-dot__content"></span>
             </div>
           </div>
@@ -171,7 +194,7 @@
               light Sapphic romance, and a strong, complex protagonist. Not for
               the faint of heart.
             </p>
-            <button class="btn btn--small">Buy</button>
+            <button class="btn btn-small">Buy</button>
             <img
               class="book__img"
               src="../src/source/images/favourites/1-the-book-eaters.png"
@@ -189,7 +212,7 @@
               recovering from a breakup moves to a quaint town in upstate New
               York and befriends a beautiful witch.
             </p>
-            <button class="btn btn--small">Buy</button>
+            <button class="btn btn-small">Buy</button>
             <img
               class="book__img"
               src="../src/source/images/favourites/2-cackle.png"
@@ -208,7 +231,7 @@
               into something of divine significance—an inspired introduction to
               Dante's main themes.
             </p>
-            <button class="btn btn--small">Buy</button>
+            <button class="btn btn-small">Buy</button>
             <img
               class="book__img"
               src="../src/source/images/favourites/3-dante.png"
@@ -225,7 +248,7 @@
               family) exploring how the Windsors have evolved and thrived as the
               modern world has changed around them.
             </p>
-            <button disabled class="btn btn--small btn--disabled">Own</button>
+            <button disabled class="btn btn-small btn-disabled">Own</button>
             <img
               class="book__img"
               src="../src/source/images/favourites/4-the-last-queen.png"
@@ -244,7 +267,7 @@
           coffee, and also you can try desserts from bakery.
         </p>
         <div class="coffeeshop__content">
-          <div class="coffeeshop__column column--first">
+          <div class="coffeeshop__column column-first">
             <div class="coffeeshop__item price-list">
               <h3 class="price-list__title">Coffee & Tea</h3>
               <ul class="price-list__list list">
@@ -281,7 +304,7 @@
               </ul>
             </div>
           </div>
-          <div class="coffeeshop__column column--second">
+          <div class="coffeeshop__column column-second">
             <div class="coffeeshop__item price-list">
               <h3 class="price-list__title">Desserts & Cakes</h3>
               <ul class="price-list__list list">
@@ -328,19 +351,19 @@
             <ul class="contacts__info_list list">
               <li>
                 Please call
-                <a href="tel:(617)730-2370" class="link text--dark"
+                <a href="tel:(617)730-2370" class="link text-dark"
                   >(617) 730-2370</a
                 >
               </li>
               <li>
                 For TTY service, please call
-                <a href="tel:(617)730-2370" class="link text--dark"
+                <a href="tel:(617)730-2370" class="link text-dark"
                   >(617) 730-2370</a
                 >
               </li>
               <li>
                 Putterham Library:
-                <a href="tel:(617)730-2385" class="link text--dark"
+                <a href="tel:(617)730-2385" class="link text-dark"
                   >(617) 730-2385</a
                 >
               </li>
@@ -348,7 +371,7 @@
             <p>Senior Staff</p>
             <span>
               Library Director:
-              <a class="link text--dark" href="mailto:AmandaHirst@bpl.com"
+              <a class="link text-dark" href="mailto:AmandaHirst@bpl.com"
                 ><b>Amanda Hirst</b></a
               >
             </span>
@@ -381,24 +404,24 @@
                   placeholder="Card number"
                 />
               </div>
-              <button class="btn btn--large">Check the card</button>
+              <button class="btn btn-large">Check the card</button>
             </form>
           </div>
           <div class="form__sign">
             <p class="form__sign_name">Get a reader card</p>
             <p class="form__sign_text">
-              You will be able to see a reader card after <br />
-              logging into account or you can register a new <br />
-              account
+              You will be able to see a reader card after logging into account
+              or you can register a new account
             </p>
             <div class="form__sign-up_buttons">
-              <button class="btn btn--small form__sign--btn">Sign up</button>
-              <button class="btn btn--small form__sign--btn">Log in</button>
+              <button class="btn btn-small form__sign-btn">Sign up</button>
+              <button class="btn btn-small form__sign-btn">Log in</button>
             </div>
           </div>
         </div>
       </section>
     </main>
+
     <footer class="footer">
       <div class="footer__info">
         <div class="footer__info_contacts">
@@ -406,7 +429,7 @@
             <p>
               <a
                 href="https://goo.gl/maps/3mewMxLRNsx8qtoV6"
-                class="link text--light"
+                class="link text-light"
                 target="_blank"
                 >286 Cadman Plaza, New York, <br />NY 11238, United States</a
               >
@@ -442,21 +465,21 @@
           </div>
         </div>
         <div class="footer__info_schedule">
-          <p class="text--light">
+          <p class="text-light">
             Mon - Fri <br />
             08:00 am - 07:00 pm
           </p>
-          <p class="text--light">
+          <p class="text-light">
             Sat - Sun <br />
             10:00 am - 06:00 pm
           </p>
         </div>
       </div>
       <div class="footer__copyright">
-        <p class="text--light">2023</p>
+        <p class="text-light">2023</p>
         <p class="">
           <a
-            class="link text--light copyright"
+            class="link text-light copyright"
             href="https://rs.school/js-stage0/"
             target="_blank"
             >The Rolling Scopes School</a
@@ -464,7 +487,7 @@
         </p>
         <p class="">
           <a
-            class="link text--light"
+            class="link text-light"
             href="https://github.com/LiudmilaRodzina"
             target="_blank"
             >Liudmila Rodzina</a

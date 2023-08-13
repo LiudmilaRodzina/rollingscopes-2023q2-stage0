@@ -6,7 +6,6 @@
 }
 // WELCOME ////////////////////////////////////////////////////////////////////////////
 .section__welcome {
-  // background: url(../source/images/welcome.png);
   background: url(../source/images/welcome.png),
     linear-gradient(
       rgb(12, 12, 14) 0%,
@@ -14,7 +13,7 @@
       rgba(18, 18, 21, 0.1) 100%
     );
   min-height: 60rem;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   position: relative;
 
@@ -83,10 +82,16 @@
 .books {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-content: start;
-  align-items: start;
   column-gap: 22rem;
   row-gap: 4rem;
+
+  @include media-tablet-land {
+    column-gap: 6rem;
+  }
+  @include media-tablet-port {
+    grid-template-columns: 1fr;
+    margin: 0 7rem;
+  }
 }
 
 .book {
@@ -96,6 +101,31 @@
   align-items: flex-start;
   padding: 1.5rem 2rem;
   height: 100%;
+
+  @include media-tablet-port {
+    max-width: 75rem;
+    min-height: 55.5rem;
+  }
+}
+
+.book__img {
+  position: absolute;
+  width: 20rem;
+  height: 30rem;
+  object-fit: cover;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.book__border {
+  position: absolute;
+  width: 93.5%;
+  height: 100%;
+  border: 1px solid $color-text-dark;
+  left: 0;
+  top: 0;
+  pointer-events: none;
 }
 
 // COFFEE SHOP ////////////////////////////////////////////////////////////////////////////
@@ -107,13 +137,36 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 46.2rem;
+
+  @include media-tablet-port {
+    grid-template-columns: 1fr;
+    gap: 0rem;
+  }
+}
+.coffeeshop__column {
+  @include media-tablet-port {
+    width: 66%;
+  }
 }
 
-.column--second {
-  width: 48.2rem;
-}
-.column--first div {
+.column-first div {
   margin-right: 2.2rem;
+
+  @include media-tablet-port {
+    margin-right: 4.6rem;
+  }
+}
+
+.column-second {
+  width: 48.2rem;
+
+  @include media-tablet-port {
+    margin-left: 24.6rem;
+  }
+}
+
+.column-second h4 {
+  text-align: right;
 }
 
 .price-list__list {
@@ -129,35 +182,46 @@
 }
 
 .price-list__description {
-  font-family: Inter;
-  font-weight: $font-weight-normal;
-  letter-spacing: 2px;
+  letter-spacing: 0.2rem;
   text-transform: capitalize;
+  font-weight: 400;
   max-width: 23.3rem;
   width: 100%;
 }
 
 .price-list__line {
-  height: 1px;
+  height: 0.1rem;
   max-width: 10rem;
   width: 100%;
   background-color: $color-primary;
 }
 
 .price-list__value {
-  font-family: Forum;
-  letter-spacing: 2px;
+  font-family: $font-add;
+  letter-spacing: 0.2rem;
   text-transform: capitalize;
 }
 
-.column--second h4 {
-  text-align: right;
-}
 // OUR CONTACTS ////////////////////////////////////////////////////////////////////////////
 .contacts {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+
+  @include media-tablet-land {
+    grid-template-columns: 1fr;
+    gap: 10rem;
+  }
+}
+
+.contacts__map img {
+  object-fit: cover;
+  flex-wrap: wrap;
+  max-width: 100%;
+
+  @include media-tablet-port {
+    padding-left: 1.7rem;
+  }
 }
 
 // DIGITAL LIBRARY CARDS ////////////////////////////////////////////////////////////////////////////
@@ -168,6 +232,11 @@
 .section__cards_info {
   display: flex;
   justify-content: space-between;
+
+  @include media-tablet-port {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .input-card {
@@ -181,19 +250,37 @@
 }
 
 ///////////////////////////////////
+.form__check {
+  @include media-tablet-port {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2.3rem;
+  }
+}
+
+.form__check form {
+  border: 3px solid $color-primary;
+  padding: 2rem 1.6rem 2.5rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  @include media-tablet-port {
+    max-width: 60rem;
+  }
+}
 .form__sign {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 3.5rem;
-}
+  max-width: 45.6rem;
 
-.form__check form {
-  border: 3px solid $color-primary;
-  padding: 2rem 1.8rem 2.5rem 2rem;
-  margin-bottom: 0.3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  @include media-tablet-port {
+    gap: 4rem;
+    align-items: center;
+    max-width: 60rem;
+  }
 }

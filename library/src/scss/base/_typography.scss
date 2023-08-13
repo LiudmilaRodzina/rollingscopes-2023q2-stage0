@@ -1,22 +1,22 @@
 @use "../abstracts" as *;
 
-.text--light {
+.text-light {
   color: $color-text-light;
 }
-.text--dark {
+.text-dark {
   color: $color-secondary;
 }
-.text--black {
+.text-black {
   color: $color-text-dark;
 }
 
 .primary-title {
-  @include text(4rem, $font-weight-normal, 0.3rem, uppercase);
+  @include text($size: 4rem, $height: 5rem, $transform: uppercase);
+  letter-spacing: 0.3rem;
+  font-family: $font-add;
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-family: $serif;
-  line-height: 5rem;
   padding: 0 8rem;
 
   & span:first-child {
@@ -25,10 +25,10 @@
 }
 
 .section-title {
-  @include text(4rem, $font-weight-normal, 0.2rem, capitalize);
-  font-family: $serif;
+  @include text($size: 4rem, $height: 4rem);
+  font-family: $font-add;
+  letter-spacing: 0.2rem;
   color: $color-secondary;
-  text-transform: capitalize;
   text-align: center;
   position: relative;
   padding-bottom: 6.1rem;
@@ -46,8 +46,7 @@
 }
 
 .form-title {
-  line-height: 2rem;
-  font-weight: $font-weight-bold;
+  @include text($weight: 700, $height: 2rem, $transform: none);
 }
 
 .section__about_text {
@@ -55,9 +54,9 @@
 }
 ///////////////////////////////////////////////////////////////////////
 .book__tag {
-  font-family: $serif;
+  @include text();
+  font-family: $font-add;
   letter-spacing: 0.2rem;
-  text-transform: capitalize;
   position: relative;
   display: block;
 
@@ -74,45 +73,30 @@
 }
 
 .book__title {
-  @include text(1.5rem, $font-weight-bold, 0.2rem, uppercase);
+  @include text($size: 1.5rem, $weight: 700, $transform: uppercase);
+  letter-spacing: 0.2rem;
   padding-top: 2rem;
 
   &_author {
-    @include text(1.5rem, $font-weight-bold, 0.2rem, capitalize);
+    @include text($size: 1.5rem, $weight: 700);
+    letter-spacing: 0.2rem;
   }
 }
 
 .book__description {
-  @include text(1.5rem, $font-weight-normal, 0.2rem, capitalize);
+  @include text($size: 1.5rem);
+  letter-spacing: 0.2rem;
   padding-top: 2rem;
   padding-bottom: 1.5rem;
   max-width: 65%;
 }
 
-.book__img {
-  position: absolute;
-  width: 20rem;
-  height: 30rem;
-  object-fit: cover;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-}
-
-.book__border {
-  position: absolute;
-  width: 93.5%;
-  height: 100%;
-  border: 1px solid $color-text-dark;
-  left: 0;
-  top: 0;
-  pointer-events: none;
-}
 ///////////////////////////////////////////////////////////////////////
 .price-list__title {
-  @include text(4rem, $font-weight-normal, 0.2rem, capitalize);
+  @include text($size: 4rem);
+  letter-spacing: 0.2rem;
   color: $color-primary;
-  font-family: $serif;
+  font-family: $font-add;
   padding-bottom: 4rem;
   padding-top: 4rem;
 }
@@ -126,36 +110,33 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  letter-spacing: 2px;
+  letter-spacing: 0.2rem;
   margin: 4rem 0;
   text-transform: capitalize;
 }
 
 .contacts__info > p {
-  font-weight: $font-weight-bold;
-  letter-spacing: 2px;
-  text-transform: capitalize;
+  @include text($weight: 700);
+  letter-spacing: 0.2rem;
   margin-bottom: 2rem;
 }
 
 .contacts__info > span {
-  letter-spacing: 2px;
+  letter-spacing: 0.2rem;
   text-transform: capitalize;
 }
 //////////////////////
 .form {
   &__check_name {
-    font-size: 3rem;
-    line-height: 3rem;
+    @include text($size: 3rem, $height: 3rem, $transform: none);
     letter-spacing: 0.6px;
     margin-bottom: 3rem;
     text-align: center;
   }
 
   &__sign_name {
-    font-family: $serif;
-    font-size: 3rem;
-    line-height: 3rem;
+    @include text($size: 3rem, $height: 3rem, $transform: none);
+    font-family: $font-add;
     letter-spacing: 0.6px;
   }
 }
@@ -163,24 +144,27 @@
 .form__sign_text {
   text-align: right;
   letter-spacing: 0.4px;
+
+  @include media-tablet-port {
+    text-align: center;
+  }
 }
 
 .form__check_card-name {
-  font-family: $serif;
+  font-family: $font-add;
   font-size: 3rem;
   line-height: 5rem;
   letter-spacing: 0.6px;
 }
 
 .card-input {
+  @include text($size: 3rem, $height: 5rem, $transform: none);
   border: 1px solid $color-text-light;
   border-radius: 1rem;
   width: 52rem;
   height: 6.6rem;
   color: $color-grey;
-  font-family: $serif;
-  font-size: 3rem;
-  line-height: 5rem;
+  font-family: $font-add;
   letter-spacing: 0.6px;
   padding-left: 2rem;
   margin: 0;

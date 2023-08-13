@@ -1,17 +1,26 @@
-@use "sass:map";
-@use "breakpoints" as *;
+@use "../abstracts/variables" as *;
 
-@mixin mq($key) {
-  $size: map.get($breakpoints, $key);
+@mixin text($size: 2rem, $height: 4rem, $weight: 400, $transform: capitalize) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+  text-transform: $transform;
+}
 
-  @media (max-width: $size) {
+%transition {
+  transition: all 0.3s ease-in-out;
+}
+
+@mixin media-tablet-land {
+  // 1024px
+  @media (max-width: $tablet-land-width) {
     @content;
   }
 }
 
-@mixin text($font-size, $font-weight, $letter-spacing, $text-transform) {
-  font-size: $font-size;
-  font-weight: $font-weight;
-  letter-spacing: $letter-spacing;
-  text-transform: $text-transform;
+@mixin media-tablet-port {
+  // 768px
+  @media (max-width: $tablet-port-width) {
+    @content;
+  }
 }
