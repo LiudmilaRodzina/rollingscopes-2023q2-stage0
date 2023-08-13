@@ -101,10 +101,6 @@
   padding-top: 4rem;
 }
 
-.coffeeshop__column:last-child .price-list__title {
-  text-align: end;
-}
-
 //////////////////////////////////////////////////////////////////////
 .contacts__info_list {
   display: flex;
@@ -145,7 +141,7 @@
   text-align: right;
   letter-spacing: 0.4px;
 
-  @include media-tablet-port {
+  @include media-desktop {
     text-align: center;
   }
 }

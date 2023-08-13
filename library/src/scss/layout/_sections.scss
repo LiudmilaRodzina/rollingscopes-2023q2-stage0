@@ -35,6 +35,11 @@
   gap: 3.1rem;
   margin-bottom: 3rem;
   margin-top: 3.6rem;
+
+  @include media-mobile-large {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 }
 
 .season-select {
@@ -47,6 +52,10 @@
   align-items: center;
   cursor: pointer;
   margin-right: 6rem;
+
+  @include media-mobile-large {
+    margin-right: 3rem;
+  }
 
   &__input {
     position: absolute;
@@ -85,12 +94,14 @@
   column-gap: 22rem;
   row-gap: 4rem;
 
-  @include media-tablet-land {
-    column-gap: 6rem;
-  }
-  @include media-tablet-port {
-    grid-template-columns: 1fr;
+  @include media-desktop {
+    column-gap: 3rem;
     margin: 0 7rem;
+    grid-template-columns: 1fr;
+  }
+
+  @include media-mobile-large {
+    margin: 1rem;
   }
 }
 
@@ -138,35 +149,70 @@
   grid-template-columns: 1fr 1fr;
   gap: 46.2rem;
 
-  @include media-tablet-port {
+  @include media-desktop {
     grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  @include media-tablet-port {
     gap: 0rem;
   }
 }
 .coffeeshop__column {
   @include media-tablet-port {
     width: 66%;
+    gap: 0rem;
+  }
+  @include media-mobile-large {
+    width: 100%;
   }
 }
 
 .column-first div {
   margin-right: 2.2rem;
 
+  @include media-desktop {
+    // margin-right: 64.6rem;
+  }
   @include media-tablet-port {
     margin-right: 4.6rem;
+  }
+  @include media-mobile-large {
+    margin-right: 0;
   }
 }
 
 .column-second {
   width: 48.2rem;
+  text-align: right;
 
+  @include media-desktop {
+    width: 100%;
+    text-align: left;
+  }
   @include media-tablet-port {
+    width: 48.2rem;
     margin-left: 24.6rem;
+    text-align: right;
+  }
+  @include media-mobile-large {
+    width: 100%;
+    margin-left: 0rem;
+    text-align: left;
   }
 }
 
-.column-second h4 {
-  text-align: right;
+.coffeeshop__column:last-child .price-list__title {
+  text-align: end;
+
+  @include media-desktop {
+    text-align: start;
+  }
+  @include media-tablet-port {
+    text-align: end;
+  }
+  @include media-mobile-large {
+    text-align: start;
+  }
 }
 
 .price-list__list {
@@ -222,6 +268,9 @@
   @include media-tablet-port {
     padding-left: 1.7rem;
   }
+  @include media-mobile-large {
+    padding-left: 0rem;
+  }
 }
 
 // DIGITAL LIBRARY CARDS ////////////////////////////////////////////////////////////////////////////
@@ -233,7 +282,7 @@
   display: flex;
   justify-content: space-between;
 
-  @include media-tablet-port {
+  @include media-desktop {
     flex-direction: column;
     align-items: center;
   }
@@ -251,7 +300,7 @@
 
 ///////////////////////////////////
 .form__check {
-  @include media-tablet-port {
+  @include media-desktop {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -267,7 +316,7 @@
   align-items: center;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
-  @include media-tablet-port {
+  @include media-desktop {
     max-width: 60rem;
   }
 }
@@ -278,7 +327,7 @@
   gap: 3.5rem;
   max-width: 45.6rem;
 
-  @include media-tablet-port {
+  @include media-desktop {
     gap: 4rem;
     align-items: center;
     max-width: 60rem;
