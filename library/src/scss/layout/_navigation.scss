@@ -1,15 +1,22 @@
+@use "../abstracts" as *;
+
+.navigation {
+  @include media-tablet-land {
+    display: none;
+  }
+}
+
 .header__navigation {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 4rem;
 }
 
-.navigation {
-  &__items {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 3rem;
-    line-height: 5rem;
-  }
+.navigation__items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  line-height: 5rem;
 }

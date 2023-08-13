@@ -1,3 +1,5 @@
+@use "components/logo";
+@use "components/hamburger";
 @use "components/buttons";
 @use "components/links";
 @use "components/slider";
@@ -7,6 +9,6 @@
 @use "layout/sections";
 @use "layout/footer";
 
-@use "base/reset";
+@use "base/base";
 @use "base/typography";
 @use "base/font-face";

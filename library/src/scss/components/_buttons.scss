@@ -1,18 +1,24 @@
 @use "../abstracts" as *;
 
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .btn {
-  @include text(1rem, $font-weight-bold, 0.1rem, capitalize);
+  @include text($size: 1rem, $height: normal, $weight: 700);
+  letter-spacing: 0.1rem;
   min-width: 7.5rem;
   padding: 0.9rem 2.6rem;
   border-radius: 0.2rem;
   text-align: center;
-  line-height: 1rem;
   background-color: $color-text-light;
   color: $color-secondary;
   border: 1px solid $color-secondary;
   margin-top: auto;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  @extend %transition;
 
   &:hover {
     background-color: $color-primary;
@@ -24,17 +30,12 @@
   }
 }
 
-.btn--large {
+.btn-large {
+  @include text($height: normal, $weight: 700, $transform: none);
   min-width: 24.2rem;
   padding: 1rem 4rem;
-  line-height: 2rem;
-  font-size: $font-size-normal;
-  font-weight: $font-weight-bold;
-  line-height: 2rem;
-  letter-spacing: 1px;
-  text-transform: none;
-  font-family: $sans-serif;
-  margin-top: 2.3rem;
+  letter-spacing: 0.1rem;
+  margin-top: 2rem;
 }
 
 .form__sign-up_buttons {
@@ -42,11 +43,11 @@
   gap: 2rem;
 }
 
-.form__sign--btn {
+.form__sign-btn {
   padding: 0.9rem 1.5rem;
 }
 
-.btn--disabled {
+.btn-disabled {
   border: 1px solid $color-primary;
   color: $color-primary;
   background-color: $color-text-light;

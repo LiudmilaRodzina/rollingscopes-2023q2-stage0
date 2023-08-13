@@ -27,7 +27,7 @@
 .footer__copyright {
   display: flex;
   justify-content: space-between;
-  padding-top: 3.5rem;
+  padding-top: 3.3rem;
   letter-spacing: 2px;
 }
 
@@ -43,5 +43,9 @@
   margin-bottom: 1.5rem;
 }
 .copyright {
-  margin-left: 13rem;
+  margin-left: 14rem;
+
+  @include media-tablet-port {
+    margin-left: 8rem;
+  }
 }
