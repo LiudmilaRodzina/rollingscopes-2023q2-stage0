@@ -1,62 +1,9 @@
 @use "../abstracts" as *;
 
-body {
-  &.lock {
-    overflow: hidden;
-  }
-}
-
-.header__navigation {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 4rem;
-  z-index: 10;
+.body-wrapper {
   position: relative;
-}
-
-.navigation {
-  @include media-tablet-land {
-    transition: all 0.3s ease-in-out;
-    display: flex;
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    top: 7rem;
-    right: -33.2rem;
-    transform: translateX(-100%);
-    width: 33.2rem;
-    // height: 57rem;
-    background-color: $color-secondary;
-    padding: 0.7rem 10.7rem 10rem 10.7rem;
-
-    &.active {
-      display: flex;
-      visibility: visible;
-      transform: translateX(0%);
-      opacity: 1;
-      right: -20px;
-    }
-  }
-}
-
-.navigation__items {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 3rem;
-  line-height: 5rem;
-
-  @include media-tablet-land {
-    flex-direction: column;
-  }
-
-  & li {
-    @include media-tablet-land {
-      display: block;
-      line-height: 5rem;
-    }
-  }
+  overflow: hidden;
+  width: 100%;
 }
 
 .header__burger {
