@@ -12,60 +12,10 @@
   line-height: 5rem;
 }
 
-body.lock {
-  overflow: hidden;
-}
-
-.header__navigation {
-  z-index: 10;
-  justify-content: space-between;
-  align-items: center;
-  gap: 4rem;
-  display: flex;
+.body-wrapper {
+  width: 100%;
   position: relative;
-}
-
-@media (width <= 1024px) {
-  .navigation {
-    visibility: hidden;
-    opacity: 0;
-    background-color: #0c0c0e;
-    width: 33.2rem;
-    padding: .7rem 10.7rem 10rem;
-    transition: all .3s ease-in-out;
-    display: flex;
-    position: absolute;
-    top: 7rem;
-    right: -33.2rem;
-    transform: translateX(-100%);
-  }
-
-  .navigation.active {
-    visibility: visible;
-    opacity: 1;
-    display: flex;
-    right: -20px;
-    transform: translateX(0%);
-  }
-}
-
-.navigation__items {
-  justify-content: space-between;
-  align-items: center;
-  gap: 3rem;
-  line-height: 5rem;
-  display: flex;
-}
-
-@media (width <= 1024px) {
-  .navigation__items {
-    flex-direction: column;
-  }
-
-  .navigation__items li {
-    line-height: 5rem;
-    display: block;
-  }
+  overflow: hidden;
 }
 
 .header__burger {
@@ -292,6 +242,54 @@ button {
 
 .active-dot {
   background-color: #bb945f;
+}
+
+.header__navigation {
+  z-index: 10;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  display: flex;
+  position: relative;
+}
+
+@media (width <= 1024px) {
+  .navigation {
+    visibility: hidden;
+    background-color: #0c0c0e;
+    width: 33.2rem;
+    padding: .7rem 10.7rem 10rem;
+    transition: all .4s ease-in-out;
+    display: flex;
+    position: absolute;
+    top: 7rem;
+    right: -35.2rem;
+  }
+
+  .navigation.active {
+    visibility: visible;
+    display: flex;
+    transform: translateX(-100%);
+  }
+}
+
+.navigation__links {
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  line-height: 5rem;
+  display: flex;
+}
+
+@media (width <= 1024px) {
+  .navigation__links {
+    flex-direction: column;
+  }
+
+  .navigation__links li {
+    line-height: 5rem;
+    display: block;
+  }
 }
 
 .header {
