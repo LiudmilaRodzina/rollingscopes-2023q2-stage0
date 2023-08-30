@@ -29,15 +29,31 @@
         <div class="header__navigation">
           <nav class="navigation">
             <ul class="navigation__links list">
-              <li><a class="navigation__link link text-light" href="#about">About</a></li>
               <li>
-                <a class="navigation__link link text-light" href="#favorites">Favorites</a>
+                <a class="navigation__link link text-light" href="#about"
+                  >About</a
+                >
               </li>
               <li>
-                <a class="navigation__link link text-light" href="#coffeeshop">Coffee shop</a>
+                <a class="navigation__link link text-light" href="#favorites"
+                  >Favorites</a
+                >
               </li>
-              <li><a class="navigation__link link text-light" href="#contacts">Contacts</a></li>
-              <li><a class="navigation__link link text-light" href="#cards">Library Card</a></li>
+              <li>
+                <a class="navigation__link link text-light" href="#coffeeshop"
+                  >Coffee shop</a
+                >
+              </li>
+              <li>
+                <a class="navigation__link link text-light" href="#contacts"
+                  >Contacts</a
+                >
+              </li>
+              <li>
+                <a class="navigation__link link text-light" href="#cards"
+                  >Library Card</a
+                >
+              </li>
             </ul>
           </nav>
           <div class="header__icon">
@@ -71,37 +87,53 @@
             and a cozy coffee shop inside
           </p>
           <div class="slider">
-            <div class="slider-container">
-              <button class="slider__arrow">
+            <div class="slider__container">
+              <button class="arrow-left">
                 <img
                   src="../src/source/icons/arrow_left.svg"
                   alt="left arrow"
                 />
               </button>
-              <div class="slider__cards">
-                <div class="slider__card">
-                  <img
-                    src="../src/source/images/about-1.png"
-                    alt="Photo of a lady looking for a book on a library shelf"
-                    class="slider__card_img"
-                  />
-                </div>
-                <div class="slider__card card-hidden">
-                  <img
-                    src="../src/source/images/about-2.png"
-                    alt="Photo of marble busts inside a library"
-                    class="slider__card_img"
-                  />
-                </div>
-                <div class="slider__card card-hidden">
-                  <img
-                    src="../src/source/images/about-3.png"
-                    alt="Panoramic view of library interior"
-                    class="slider__card_img"
-                  />
+              <div class="slider__wrapper">
+                <div class="slider__items">
+                  <div class="slider__item">
+                    <img
+                      src="../src/source/images/about-1.png"
+                      alt="Photo of a lady looking for a book on a library shelf"
+                      class="slider__item_img"
+                    />
+                  </div>
+                  <div class="slider__item">
+                    <img
+                      src="../src/source/images/about-2.png"
+                      alt="Photo of marble busts inside a library"
+                      class="slider__item_img"
+                    />
+                  </div>
+                  <div class="slider__item">
+                    <img
+                      src="../src/source/images/about-3.png"
+                      alt="Panoramic view of library interior"
+                      class="slider__item_img"
+                    />
+                  </div>
+                  <div class="slider__item">
+                    <img
+                      src="../src/source/images/about-4.png"
+                      alt="Panoramic view of library interior"
+                      class="slider__item_img"
+                    />
+                  </div>
+                  <div class="slider__item">
+                    <img
+                      src="../src/source/images/about-5.png"
+                      alt="Panoramic view of library interior"
+                      class="slider__item_img"
+                    />
+                  </div>
                 </div>
               </div>
-              <button class="slider__arrow">
+              <button class="arrow-right">
                 <img
                   src="../src/source/icons/arrow_right.svg"
                   alt="right arrow"
@@ -109,21 +141,11 @@
               </button>
             </div>
             <div class="slider__pagination">
-              <div class="pagination-dot active-dot">
-                <span class="pagination-dot__content"></span>
-              </div>
-              <div class="pagination-dot">
-                <span class="pagination-dot__content"></span>
-              </div>
-              <div class="pagination-dot">
-                <span class="pagination-dot__content"></span>
-              </div>
-              <div class="pagination-dot dot-hidden">
-                <span class="pagination-dot__content"></span>
-              </div>
-              <div class="pagination-dot dot-hidden">
-                <span class="pagination-dot__content"></span>
-              </div>
+              <div class="pagination-dot dot-active"></div>
+              <div class="pagination-dot"></div>
+              <div class="pagination-dot"></div>
+              <div class="pagination-dot dot-hidden"></div>
+              <div class="pagination-dot dot-hidden"></div>
             </div>
           </div>
         </section>
