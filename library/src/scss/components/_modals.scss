@@ -122,11 +122,9 @@
 
 .modal__close {
   height: 1.6rem;
-  padding-block: 0.4rem;
-  padding-inline: 0;
   position: absolute;
   right: 1.3rem;
-  top: 1rem;
+  top: 1.3rem;
 }
 
 .modal__body form {
@@ -227,10 +225,10 @@
 
 .modal__close.profile__close {
   display: block;
-  top: 2rem;
-  right: 2rem;
-  height: 2.6rem;
-  width: 2.6rem;
+  top: 2.4rem;
+  right: 2.4rem;
+  height: 1.8rem;
+  width: 1.8rem;
   cursor: pointer;
 }
 
