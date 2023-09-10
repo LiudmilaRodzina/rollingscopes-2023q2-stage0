@@ -263,30 +263,6 @@ button {
   opacity: .5;
 }
 
-.profile__icon {
-  padding-top: 1rem;
-  display: block;
-  position: relative;
-}
-
-.logged {
-  color: #bb945f;
-  background-color: #fff;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  width: 2.8rem;
-  height: 2.8rem;
-  padding-bottom: 1rem;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  display: flex;
-}
-
-.logged img {
-  display: none;
-}
-
 .overlay {
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
@@ -306,6 +282,30 @@ button {
   opacity: 1;
 }
 
+.profile__icon {
+  padding-top: 1rem;
+  display: block;
+  position: relative;
+}
+
+.logged-in {
+  color: #bb945f;
+  background-color: #fff;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  display: flex;
+}
+
+.logged-in img {
+  display: none;
+}
+
 .profile__menu {
   visibility: hidden;
   opacity: 0;
@@ -320,6 +320,10 @@ button {
   right: 0;
 }
 
+.profile__menu.authorized {
+  top: 4rem;
+}
+
 .profile__menu.active {
   visibility: visible;
   opacity: 1;
@@ -327,6 +331,7 @@ button {
 
 .profile__menu_title {
   text-transform: capitalize;
+  color: #000;
   padding-top: .5rem;
   padding-bottom: 1rem;
   font-size: 1.5rem;
@@ -347,7 +352,7 @@ button {
 }
 
 .profile__menu_item {
-  text-transform: capitalize;
+  text-transform: auto;
   font-family: Inter, sans-serif;
   font-size: 1.5rem;
   font-weight: 400;
@@ -601,6 +606,10 @@ button {
 
 .icon-copy {
   cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
 
 .header__navigation {
