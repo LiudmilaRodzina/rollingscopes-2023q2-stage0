@@ -233,6 +233,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const emailRegister = document.querySelector("#email").value;
     const passwordRegister = document.querySelector("#register-password").value;
 
+    
+
     users.push(
       new NewUser(firstName, lastName, emailRegister, passwordRegister)
     );
