@@ -1,0 +1,348 @@
+@use "../abstracts" as *;
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+  z-index: 11;
+  visibility: hidden;
+  opacity: 0;
+  @extend %transition;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  &.open {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.profile__icon {
+  display: block;
+  padding-top: 1rem;
+  position: relative;
+}
+.logged-in {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+  height: 2.8rem;
+  width: 2.8rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  border-radius: 50%;
+  color: $color-primary;
+  background-color: $color-text-light;
+
+  & img {
+    display: none;
+  }
+}
+
+// PROFILE MENU
+.profile__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-text-light;
+  width: 8rem;
+  height: 11.5rem;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  right: 0;
+  @extend %transition;
+  gap: 1rem;
+
+  &.authorized {
+    top: 4rem;
+  }
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.profile__menu_title {
+  @include text($height: 2rem, $weight: 700, $size: 1.5rem);
+  position: relative;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  color: $color-text-dark;
+
+  &::after {
+    content: "";
+    border-bottom: 1px solid $color-primary;
+    position: absolute;
+    width: 4rem;
+    height: 1px;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.profile__menu_item {
+  @include text($height: 2rem, $size: 1.5rem, $transform: auto);
+  font-family: $font-prim;
+  display: block;
+}
+// REGISTER
+.modal__register,
+.modal__login {
+  position: fixed;
+  background-color: $color-text-light;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25rem;
+  max-height: 38.2rem;
+  padding: 2rem 2.5rem;
+  z-index: 12;
+  visibility: hidden;
+  opacity: 0;
+  @extend %transition;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.modal__login {
+  height: 26.2rem;
+}
+.modal__title {
+  text-align: center;
+  font-family: $font-add;
+  line-height: 2rem;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.modal__close {
+  height: 1.6rem;
+  position: absolute;
+  right: 1.3rem;
+  top: 1.3rem;
+}
+
+.modal__body form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.form-item label {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: 0.3px;
+}
+
+.form-item input {
+  border: 1px solid $color-primary;
+  font-size: 1.4rem;
+  padding: 0.1rem 0.5rem;
+  outline: none;
+  width: 100%;
+}
+
+.btn-signup,
+.btn-login {
+  padding: 0.9rem 1.4rem;
+  margin-top: 1rem;
+}
+
+.modal__footer {
+  font-size: 1rem;
+  display: flex;
+  gap: 1rem;
+  line-height: 3rem;
+}
+
+.modal__footer button {
+  font-family: $font-prim;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration-line: underline;
+  letter-spacing: 0.1rem;
+}
+
+// LOGIN
+.modal-login {
+  position: fixed;
+  background-color: $color-text-light;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25rem;
+  max-height: 38.2rem;
+  padding: 2rem 2.5rem;
+  z-index: 12;
+  visibility: hidden;
+  opacity: 0;
+  @extend %transition;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+// MY PROFILE MODAL
+
+.modal__profile {
+  display: grid;
+  grid-template-columns: 17rem 43rem;
+  background-color: $color-text-light;
+  color: $color-text-dark;
+  position: absolute;
+  height: 40rem;
+  max-width: 60rem;
+  position: fixed;
+
+  top: calc(50% + 3rem);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 12;
+  visibility: hidden;
+  opacity: 0;
+  @extend %transition;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.modal__close.profile__close {
+  display: block;
+  top: 2.4rem;
+  right: 2.4rem;
+  height: 1.8rem;
+  width: 1.8rem;
+  cursor: pointer;
+}
+
+.profile__user {
+  background-color: $color-secondary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14rem;
+}
+
+.profile__initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  padding: 3rem 2.7rem;
+  height: 8rem;
+  width: 8rem;
+  background-color: $color-text-light;
+  color: $color-primary;
+  text-transform: uppercase;
+  line-height: 2rem;
+}
+
+.profile__fullname {
+  background-color: $color-text-light;
+  text-transform: capitalize;
+  text-align: center;
+  line-height: 2rem;
+  padding: 0.5rem 1.5rem;
+  max-width: 12rem;
+}
+
+.profile__statistics {
+  background-color: $color-text-light;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__title {
+  @include text($size: 4rem, $height: 2rem, $transform: uppercase);
+  font-family: $font-add;
+  letter-spacing: 0.8px;
+  margin-bottom: 4rem;
+}
+
+.profile__info {
+  max-width: 23.7rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+
+  &_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    line-height: 2rem;
+    letter-spacing: 0.4px;
+  }
+
+  & img {
+    width: 2rem;
+    height: 2.1rem;
+  }
+}
+
+.visits-count,
+.bonuses-count,
+.books-count {
+  @include text($size: 1rem, $height: 2rem, $transform: uppercase);
+  letter-spacing: 0.2px;
+}
+
+.profile__subtitle {
+  color: $color-secondary;
+  @include text($size: 2.5rem, $height: 2rem, $transform: auto);
+  margin-bottom: 3rem;
+}
+
+.profile__rented {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  line-height: 2rem;
+  letter-spacing: 0.2rem;
+  padding: 0 0 4rem 3rem;
+}
+
+.profile__card {
+  display: flex;
+  align-items: center;
+  color: $color-secondary;
+  line-height: 2rem;
+}
+
+.profile__card_number {
+  color: $color-primary;
+  padding: 0 1.5rem;
+}
+
+.icon-copy {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}

@@ -76,14 +76,12 @@
   left: -0.5rem;
   right: -0.5rem;
   bottom: -0.5rem;
-  // background: rgba(255, 0, 0, 0.09);
   border-radius: 50%;
 }
 
 .dot-active {
   background-color: $color-primary;
   &:hover {
-    background-color: $color-grey;
     cursor: auto;
   }
 }
