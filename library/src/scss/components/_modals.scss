@@ -1,28 +1,5 @@
 @use "../abstracts" as *;
 
-.profile__icon {
-  display: block;
-  padding-top: 1rem;
-  position: relative;
-}
-.logged {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 1rem;
-  height: 2.8rem;
-  width: 2.8rem;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  background-color: $color-text-light;
-  border-radius: 50%;
-  color: $color-primary;
-
-  & img {
-    display: none;
-  }
-}
-
 .overlay {
   position: absolute;
   top: 0;
@@ -45,6 +22,29 @@
     opacity: 1;
   }
 }
+.profile__icon {
+  display: block;
+  padding-top: 1rem;
+  position: relative;
+}
+.logged-in {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+  height: 2.8rem;
+  width: 2.8rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  border-radius: 50%;
+  color: $color-primary;
+  background-color: $color-text-light;
+
+  & img {
+    display: none;
+  }
+}
+
 // PROFILE MENU
 .profile__menu {
   display: flex;
@@ -60,16 +60,22 @@
   @extend %transition;
   gap: 1rem;
 
+  &.authorized {
+    top: 4rem;
+  }
+
   &.active {
     visibility: visible;
     opacity: 1;
   }
 }
+
 .profile__menu_title {
   @include text($height: 2rem, $weight: 700, $size: 1.5rem);
   position: relative;
   padding-top: 0.5rem;
   padding-bottom: 1rem;
+  color: $color-text-dark;
 
   &::after {
     content: "";
@@ -83,7 +89,7 @@
   }
 }
 .profile__menu_item {
-  @include text($height: 2rem, $size: 1.5rem);
+  @include text($height: 2rem, $size: 1.5rem, $transform: auto);
   font-family: $font-prim;
   display: block;
 }
@@ -335,4 +341,8 @@
 
 .icon-copy {
   cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }

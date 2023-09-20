@@ -9,7 +9,7 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./scss/main.scss" />
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" defer src="./js/main.js"></script>
     <link
       rel="shortcut icon"
       type="image/png"
@@ -58,7 +58,6 @@
               </li>
             </ul>
           </nav>
-
           <div class="profile__icon">
             <span></span>
             <a href="#"
@@ -72,10 +71,18 @@
               <button class="profile__menu_item login-link">Log In</button>
               <button class="profile__menu_item register-link">Register</button>
             </div>
+          </div>
+          <div class="profile__icon logged-in hidden">
+            <span class="profile__icon_text"></span>
+            <a href="#"
+              ><img
+                src="../src/source/icons/icon_profile.svg"
+                alt="profile icon"
+            /></a>
 
-            <div class="profile__menu authorized">
+            <div class="profile__menu authorized hidden">
               <h3 class="profile__menu_title">Profile</h3>
-              <button class="profile__menu_item profile-link">
+              <button class="profile__menu_item my-profile-link">
                 My profile
               </button>
               <button class="profile__menu_item logout-link">Log Out</button>
@@ -122,7 +129,7 @@
                   type="password"
                   id="register-password"
                   required
-                  minlength="1"
+                  minlength="8"
                 />
               </div>
               <button
@@ -154,19 +161,19 @@
                 <label for="email-login">E-mail or readers card</label>
                 <input
                   name="email-login"
-                  type="text"
+                  type="email"
                   id="email-login"
                   required
                 />
               </div>
               <div class="form-item">
-                <label for="password">Password</label>
+                <label for="login-password">Password</label>
                 <input
-                  name="password"
+                  name="login-password"
                   type="password"
-                  id="password"
+                  id="login-password"
                   required
-                  minlength="1"
+                  minlength="8"
                 />
               </div>
               <button
@@ -201,17 +208,17 @@
               <div class="profile__info_item">
                 <p>Visits</p>
                 <img src="./source/icons/person-icon.svg" alt="person icon" />
-                <p class="visits-count">0</p>
+                <p class="visits-count">23</p>
               </div>
               <div class="profile__info_item">
                 <p>Bonuses</p>
                 <img src="./source/icons/star-icon.svg" alt=" star icon" />
-                <p class="bonuses-count">0</p>
+                <p class="bonuses-count">1240</p>
               </div>
               <div class="profile__info_item">
                 <p>Books</p>
                 <img src="./source/icons/book-icon.svg" alt="book icon" />
-                <p class="books-count">0</p>
+                <p class="books-count">2</p>
               </div>
             </div>
             <p class="profile__subtitle">Rented books</p>
@@ -369,7 +376,7 @@
                 light Sapphic romance, and a strong, complex protagonist. Not
                 for the faint of heart.
               </p>
-              <button class="btn btn-small">Buy</button>
+              <button class="btn btn-small login-link">Buy</button>
               <img
                 class="book__img"
                 src="../src/source/images/favourites/1-the-book-eaters.png"
@@ -387,7 +394,7 @@
                 recovering from a breakup moves to a quaint town in upstate New
                 York and befriends a beautiful witch.
               </p>
-              <button class="btn btn-small">Buy</button>
+              <button class="btn btn-small login-link">Buy</button>
               <img
                 class="book__img"
                 src="../src/source/images/favourites/2-cackle.png"
@@ -406,7 +413,7 @@
                 drama of soul into something of divine significance—an inspired
                 introduction to Dante's main themes.
               </p>
-              <button class="btn btn-small">Buy</button>
+              <button class="btn btn-small login-link">Buy</button>
               <img
                 class="book__img"
                 src="../src/source/images/favourites/3-dante.png"
@@ -423,7 +430,7 @@
                 her family) exploring how the Windsors have evolved and thrived
                 as the modern world has changed around them.
               </p>
-              <button disabled class="btn btn-small btn-disabled">Own</button>
+              <button class="btn btn-small login-link">Buy</button>
               <img
                 class="book__img"
                 src="../src/source/images/favourites/4-the-last-queen.png"
@@ -596,6 +603,11 @@
                 </button>
                 <button class="btn btn-small form__sign-btn login-link">
                   Log in
+                </button>
+                <button
+                  class="btn btn-small form__sign-btn my-profile-link hidden"
+                >
+                  Profile
                 </button>
               </div>
             </div>

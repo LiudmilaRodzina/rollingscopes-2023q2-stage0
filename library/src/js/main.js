@@ -1,5 +1,5 @@
 "use strict";
-console.log("Выполнено: Ограниченная карусель в блоке About + 25 баллов");
+console.log("");
 
 document.addEventListener("DOMContentLoaded", () => {
   // BURGER MENU
@@ -112,166 +112,257 @@ document.addEventListener("DOMContentLoaded", () => {
       thisSlide(dotIndex);
     });
   });
-});
 
-/////////////////////////////////////////////////////////////
-// PROFILE MODAL WINDOW
-const profileIcon = document.querySelector(".profile__icon");
-const profileMenu = document.querySelector(".profile__menu");
+  /////////////////////////////////////////////////////////////
+  // PROFILE MODAL WINDOW UNAUTHORIZED
+  const profileIcon = document.querySelector(".profile__icon");
+  const profileMenu = document.querySelector(".profile__menu");
 
-const toggleProfileMenu = () => {
-  profileIcon.addEventListener("click", () => {
-    profileMenu.classList.toggle("active");
+  const toggleProfileMenu = () => {
+    profileIcon.addEventListener("click", () => {
+      profileMenu.classList.toggle("active");
+    });
+    document.addEventListener("click", (e) => {
+      if (
+        !e.target.closest(".profile__icon") &&
+        !e.target.closest(".profile__menu")
+      ) {
+        profileMenu.classList.remove("active");
+      }
+    });
+  };
+  toggleProfileMenu();
+
+  // PROFILE MODAL WINDOW AUTHORIZED
+  const profileMenuAuthorized = document.querySelector(
+    ".profile__menu.authorized"
+  );
+  const profileIconAuthorized = document.querySelector(
+    ".profile__icon.logged-in"
+  );
+
+  const toggleProfileMenuAuthorized = () => {
+    profileIconAuthorized.addEventListener("click", () => {
+      if (profileMenuAuthorized.classList.contains("hidden")) {
+        profileMenuAuthorized.classList.remove("hidden");
+      } else {
+        !profileMenuAuthorized.classList.add("hidden");
+      }
+    });
+
+    document.addEventListener("click", (e) => {
+      if (
+        !e.target.closest(".profile__icon") &&
+        !e.target.closest(".profile__menu")
+      ) {
+        profileMenuAuthorized.classList.add("hidden");
+      }
+    });
+  };
+  toggleProfileMenuAuthorized();
+
+  // CLOSE MODAL
+  const closeModal = document.querySelectorAll(".modal__close");
+  const overlay = document.querySelector(".overlay");
+
+  closeModal.forEach((el) => {
+    el.addEventListener("click", () => {
+      modalRegister.classList.remove("active");
+      modalLogin.classList.remove("active");
+      modalProfile.classList.remove("active");
+      overlay.classList.remove("active");
+      overlay.classList.remove("open");
+    });
   });
 
-  document.addEventListener("click", (e) => {
-    if (
-      !e.target.closest(".profile__icon") &&
-      !e.target.closest(".profile__menu")
-    ) {
-      profileMenu.classList.remove("active");
-    }
-  });
-};
-toggleProfileMenu();
-
-// CLOSE MODAL
-const closeModal = document.querySelectorAll(".modal__close");
-const overlay = document.querySelector(".overlay");
-
-closeModal.forEach((el) => {
-  el.addEventListener("click", () => {
+  overlay.addEventListener("click", () => {
     modalRegister.classList.remove("active");
     modalLogin.classList.remove("active");
-    modalProfile.classList.remove("active");
     overlay.classList.remove("active");
     overlay.classList.remove("open");
   });
-});
 
-overlay.addEventListener("click", () => {
-  modalRegister.classList.remove("active");
-  modalLogin.classList.remove("active");
-  overlay.classList.remove("active");
-});
+  // REGISTER MODAL
+  const modalRegister = document.querySelector(".modal__register");
+  const registerLinks = document.querySelectorAll(".register-link");
 
-// REGISTER MODAL
-const modalRegister = document.querySelector(".modal__register");
-const registerLinks = document.querySelectorAll(".register-link");
+  registerLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      modalRegister.classList.add("active");
+      modalLogin.classList.remove("active");
 
-registerLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    modalRegister.classList.add("active");
-    modalLogin.classList.remove("active");
-
-    if (!overlay.classList.contains("active")) {
-      overlay.classList.add("active");
-    }
+      if (!overlay.classList.contains("active")) {
+        overlay.classList.add("active");
+      }
+    });
   });
-});
 
-// LOGIN MODAL
-const modalLogin = document.querySelector(".modal__login");
-const loginLinks = document.querySelectorAll(".login-link");
+  // LOGIN MODAL
+  const modalLogin = document.querySelector(".modal__login");
+  const loginLinks = document.querySelectorAll(".login-link");
 
-loginLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    modalLogin.classList.add("active");
-    modalRegister.classList.remove("active");
+  loginLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      modalLogin.classList.add("active");
+      modalRegister.classList.remove("active");
 
-    if (!overlay.classList.contains("active")) {
-      overlay.classList.add("active");
-    }
+      if (!overlay.classList.contains("active")) {
+        overlay.classList.add("active");
+      }
+    });
   });
-});
 
-///////////////////////////////////////////////////////////////////
-// LOCALSTORAGE
-// localStorage.clear();
-const registerSubmitBtn = document.querySelector("#register-submit");
-const loginSubmitBtn = document.querySelector("#login-submit");
+  ///////////////////////////////////////////////////////////////////
+  // LOCALSTORAGE
+  const registerSubmitBtn = document.querySelector("#register-submit");
+  const loginSubmitBtn = document.querySelector("#login-submit");
 
-const firstName = document.querySelector("#first-name").value;
-const lastName = document.querySelector("#last-name").value;
+  class NewUser {
+    constructor(firstName, lastName, emailRegister, passwordRegister) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.emailRegister = emailRegister;
+      this.passwordRegister = passwordRegister;
+    }
+  }
+  let users = JSON.parse(localStorage.getItem("usersArray")) || [];
 
-const register = (e) => {
-  e.preventDefault();
-  const firstName = document.querySelector("#first-name").value;
-  const lastName = document.querySelector("#last-name").value;
-  const email = document.querySelector("#email").value;
-  const passwordRegister = document.querySelector("#register-password").value;
+  const registerNewUser = (e) => {
+    e.preventDefault();
+    const registerForm = document.querySelector("#register-form");
+    const firstName = document.querySelector("#first-name").value;
+    const lastName = document.querySelector("#last-name").value;
+    const emailRegister = document.querySelector("#email").value;
+    const passwordRegister = document.querySelector("#register-password").value;
 
-  let users = JSON.parse(localStorage.getItem("users")) || [];
-
-  let exist =
-    users.length &&
-    JSON.parse(localStorage.getItem("users")).some(
-      (data) =>
-        data.firstName.toLowerCase() == firstName.toLowerCase() &&
-        data.lastName.toLowerCase() == lastName.toLowerCase()
+    users.push(
+      new NewUser(firstName, lastName, emailRegister, passwordRegister)
     );
-
-  if (!exist) {
-    users.push({ firstName, lastName, email, passwordRegister });
-    localStorage.setItem("users", JSON.stringify(users));
+    localStorage.setItem("usersArray", JSON.stringify(users));
+    localStorage.setItem("loginStatus", "false");
     modalLogin.classList.add("active");
     modalRegister.classList.remove("active");
-  } else {
-    alert("Duplicate account!");
-  }
-};
-registerSubmitBtn.addEventListener("click", register);
+    registerForm.reset();
+  };
 
-const logIn = (e) => {
-  e.preventDefault();
-  const loginForm = document.querySelector("#login-form");
-  const formData = new FormData(loginForm);
-  const data = Object.fromEntries(formData.entries());
-  const emailLogin = data["email-login"].trim().toLowerCase();
-  const password = data["password"];
+  registerSubmitBtn.addEventListener("click", registerNewUser);
+  /////////////////////////////////
+  // LOGIN;
+  const logIn = (e) => {
+    e.preventDefault();
+    const loginForm = document.querySelector("#login-form");
+    const formData = new FormData(loginForm);
+    const data = Object.fromEntries(formData.entries());
+    const emailLogin = data["email-login"].trim().toLowerCase();
+    const passwordLogin = data["login-password"];
 
-  let users = localStorage.getItem("users") || [];
-  users = JSON.parse(users);
+    let users = JSON.parse(localStorage.getItem("usersArray")) || [];
 
-  let currentUser = users.filter((user) => user.email == emailLogin)[0];
+    let currentUser = users.filter(
+      (user) => user.emailRegister == emailLogin
+    )[0];
 
-  if (currentUser) {
-    if (password == currentUser.passwordRegister) {
-      localStorage.setItem("currentUser", JSON.stringify(currentUser));
-      loginForm.reset();
-      loggedInState();
-      profileIcon.innerHTML =
-        `${currentUser.firstName[0]}${currentUser.lastName[0]}`.toUpperCase();
+    if (currentUser) {
+      if (passwordLogin == currentUser.passwordRegister) {
+        localStorage.setItem("currentUser", JSON.stringify(currentUser));
+        localStorage.setItem("loginStatus", "true");
+        loginForm.reset();
+        loggedInState();
+      } else {
+        alert("Wrong password");
+      }
     } else {
-      alert("Wrong password");
+      alert("User not found");
     }
-  } else {
-    alert("User not found");
-  }
-};
-loginSubmitBtn.addEventListener("click", logIn);
-///////////////////////////////////////////////////////////////
-const loggedInState = () => {
-  profileIcon.classList.add("logged");
-  modalLogin.classList.remove("active");
-  overlay.classList.remove("active");
-};
+  };
+  loginSubmitBtn.addEventListener("click", logIn);
+  ///////////////////////////////////////////////////////////////
 
-// MY PROFILE MODAL activate on LOGO (TODO: later on My profile buttons)
-const myProfileBtn = document.querySelector(".logo");
-const modalProfile = document.querySelector(".modal__profile");
+  const loggedInState = (e) => {
+    const profileIconText = document.querySelector(".profile__icon_text");
 
-const openMyProfile = () => {
-  myProfileBtn.addEventListener("click", () => {
-    modalProfile.classList.add("active");
-    overlay.classList.add("open");
+    profileIcon.classList.add("hidden");
+    profileIconAuthorized.classList.remove("hidden");
+    modalLogin.classList.remove("active");
+    overlay.classList.remove("active");
+
+    profileIconText.innerText = `${
+      JSON.parse(localStorage.getItem("currentUser")).firstName[0]
+    }${
+      JSON.parse(localStorage.getItem("currentUser")).lastName[0]
+    }`.toUpperCase();
+
+    profileIconAuthorized.style.cursor = "pointer";
+    profileIconAuthorized.addEventListener("click", () => {
+      profileMenuAuthorized.classList.add("active");
+    });
+
+    document
+      .querySelector(".form__sign-btn.register-link")
+      .classList.add("hidden");
+
+    document
+      .querySelector(".form__sign-btn.login-link")
+      .classList.add("hidden");
+
+    document
+      .querySelector(".form__sign-btn.my-profile-link")
+      .classList.remove("hidden");
+  };
+
+  ////////////////////////////////////////////////////////////////////////////
+  // MY PROFILE MODAL
+  const myProfileBtn = document.querySelectorAll(".my-profile-link");
+  const modalProfile = document.querySelector(".modal__profile");
+
+  myProfileBtn.forEach((link) => {
+    link.addEventListener("click", () => {
+      modalProfile.classList.add("active");
+      overlay.classList.add("open");
+    });
+    document.addEventListener("click", (e) => {
+      if (
+        !e.target.closest(".my-profile-link") &&
+        !e.target.closest(".modal__profile")
+      ) {
+        modalProfile.classList.remove("active");
+        overlay.classList.remove("open");
+      }
+    });
   });
 
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".logo") && !e.target.closest(".modal__profile")) {
-      modalProfile.classList.remove("active");
-      overlay.classList.remove("open");
+  // LOGOUT
+  const logOutBtn = document.querySelector(".logout-link");
+  const loggedOutState = () => {
+    logOutBtn.addEventListener("click", () => {
+      localStorage.setItem("loginStatus", false);
+
+      profileIcon.classList.remove("hidden");
+      profileIconAuthorized.classList.add("hidden");
+
+      document
+        .querySelector(".form__sign-btn.register-link")
+        .classList.remove("hidden");
+      document
+        .querySelector(".form__sign-btn.login-link")
+        .classList.remove("hidden");
+      document
+        .querySelector(".form__sign-btn.my-profile-link")
+        .classList.add("hidden");
+    });
+  };
+  loggedOutState();
+
+  // Logged state after refresh
+  const checkState = () => {
+    if (JSON.parse(localStorage.getItem("loginStatus", "true"))) {
+      loggedInState();
+    } else {
+      loggedOutState();
     }
-  });
-};
-openMyProfile();
+  };
+  checkState();
+
+  // VALIDATE REGISTER
+  // VALIDATE LOGIN
+});
