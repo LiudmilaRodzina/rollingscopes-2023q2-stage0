@@ -1,6 +1,4 @@
 "use strict";
-console.log("");
-
 document.addEventListener("DOMContentLoaded", () => {
   // BURGER MENU
   const navigation = document.querySelector(".navigation");
@@ -235,6 +233,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const emailRegister = document.querySelector("#email").value;
     const passwordRegister = document.querySelector("#register-password").value;
 
+    
+
     users.push(
       new NewUser(firstName, lastName, emailRegister, passwordRegister)
     );
@@ -362,7 +362,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
   checkState();
-
-  // VALIDATE REGISTER
-  // VALIDATE LOGIN
 });
