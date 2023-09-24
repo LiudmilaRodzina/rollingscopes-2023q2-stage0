@@ -15,7 +15,7 @@ const timeTotal = document.querySelector(".time_total");
 const playPauseSwitch = document.querySelector(".play-pause_switch");
 
 const songs = [
-  ["Dusty-blue", " Charles Bradley"],
+  ["Dusty-blue", "Charles Bradley"],
   ["Unbalanced-pieces", "Mark Lanegan & Soulsavers"],
 ];
 
@@ -24,20 +24,20 @@ let songIndex = 0;
 const loadSong = (song) => {
   title.innerHTML = `${song[0].replace("-", " ")}`;
   subTitle.innerHTML = song[1];
-  track.src = `../src/audio/${song[0]}.mp3`;
-  cover.src = `../src/img/cover-${songIndex + 1}.jpg`;
+  track.src = `./src/audio/${song[0]}.mp3`;
+  cover.src = `./src/img/cover-${songIndex + 1}.jpg`;
 };
 loadSong(songs[songIndex]);
 
 const playSong = () => {
   player.classList.add("play");
-  playPauseSwitch.src = "../src/img/pause.svg";
+  playPauseSwitch.src = "./src/img/pause.svg";
   track.play();
 };
 
 const pauseSong = () => {
   player.classList.remove("play");
-  playPauseSwitch.src = "../src/img/play.svg";
+  playPauseSwitch.src = "./src/img/play.svg";
   track.pause();
 };
 
