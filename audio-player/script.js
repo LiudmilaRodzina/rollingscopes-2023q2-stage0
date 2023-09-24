@@ -8,7 +8,7 @@ const cover = document.querySelector(".cover__img");
 const title = document.querySelector(".title");
 const subTitle = document.querySelector(".sub-title");
 const track = document.querySelector(".track");
-const progressContainer = document.querySelector(".progress__container");
+const progressContainer = document.querySelector(".progress");
 const progressBar = document.querySelector(".progress__bar");
 const timeCurrent = document.querySelector(".time_current");
 const timeTotal = document.querySelector(".time_total");
@@ -84,6 +84,7 @@ track.addEventListener("timeupdate", updateProgressBar);
 const updateTime = (e) => {
   let { duration, currentTime } = e.srcElement;
   if (duration) {
+    // timeTotal.innerHTML = `Track duration: ${formatTime(duration)}`;
     timeTotal.innerHTML = `${formatTime(duration)}`;
   } else {
     timeTotal.innerHTML = `${"00:00"}`;
