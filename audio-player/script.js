@@ -1,1 +1,1 @@
-console.log("Test script.js");
+"use strict";

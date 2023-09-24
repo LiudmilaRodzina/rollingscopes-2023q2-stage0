@@ -2,12 +2,58 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Enjoy your favourite music with our audio-player"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="./src/img/musical-notes.svg"
+    />
+
     <title>Audio-player</title>
   </head>
   <body>
-    <h1>Audio-player</h1>
+    <div class="wrapper">
+      <div class="player">
+        <audio class="track" src="./src/audio/Dusty blue.mp3"></audio>
+        <div class="cover">
+          <img class="cover__img" src="./src/img/cover-1.jpg" alt="cover" />
+        </div>
+        <div class="title">Dusty blue</div>
+        <div class="sub-title">Charles Bradley</div>
+        <div class="progress__container">
+          <div class="progress__bar"></div>
+        </div>
+        <div class="buttons">
+          <div class="button previous">
+            <img src="./src/img/play-back.svg" alt="button previous" />
+          </div>
+          <div class="button play">
+            <img class="play-pause_switch" src="./src/img/play.svg" alt="play button" />
+          </div>
+          <div class="button next">
+            <img src="./src/img/play-forward.svg" alt="button next" />
+          </div>
+        </div>
+        <div class="footer__container">
+          <a href="https://rs.school/js-stage0/" target="_blank"
+            ><img
+              class="rs-logo"
+              src="./src/img/rs_school_js.svg"
+              alt="RS School logo"
+          /></a>
+          <p class="year-text">&copy; 2023</p>
+          <a href="https://github.com/LiudmilaRodzina" target="_blank"
+            ><img class="gh-logo" src="./src/img/github.svg" alt="GitHub logo"
+          /></a>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
