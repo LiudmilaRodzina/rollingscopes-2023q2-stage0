@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -21,15 +21,42 @@
   <body>
     <header class="container">
       <div class="header__content">
-        <a href="index.html" class="header__title">Find your inspiration...</a>
-        <form id="form">
-          <input type="text" class="header__search" placeholder="Search..." />
+        <a href="index.html" class="header__title">Find your inspiration</a>
+        <form
+          class="header__search"
+          name="search"
+          id="search-form"
+          action="submit"
+        >
+          <input
+            class="header__search"
+            name="search_value"
+            id="search-input"
+            type="text"
+            placeholder="Search images..."
+            autocomplete="off"
+            autofocus
+          />
+          <button type="submit" class="btn btn_search">
+            <img src="./img/search-outline.svg" alt="search icon" />
+          </button>
+          <button type="button" class="btn btn_clear">
+            <img src="./img/close-outline.svg" alt="clear icon" />
+          </button>
         </form>
       </div>
     </header>
-    <div class="container">
-      <div class="images" id="gallery"></div>
-    </div>
+    <main class="gallery container"></main>
+
+    <footer class="footer container">
+      <a href="https://rs.school/js-stage0/" target="_blank"
+        ><img class="rs-logo" src="./img/rs-school-js.svg" alt="RS School logo"
+      /></a>
+      <p class="year-text">&copy; 2023</p>
+      <a href="https://github.com/LiudmilaRodzina" target="_blank"
+        ><img class="gh-logo" src="./img/github.svg" alt="GitHub logo"
+      /></a>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
