@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: sans-serif;
+  padding: 3rem;
+  box-sizing: border-box;
+}
+.container {
+  background-color: #ced4da;
+  border-radius: 1.5rem;
+  max-width: 128rem;
+  max-height: 100%;
+  width: 100%;
+  padding: 2rem;
+  margin: 0 auto;
+  border: 1px solid rgb(158, 160, 129, 0.5);
+  box-shadow: 0 0 1rem 0.2rem rgba(34, 60, 80, 0.1);
+}
