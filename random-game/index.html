@@ -1,23 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="shortcut icon"
-      type="image/png"
-      href="img/help-circle-outline.svg"
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="RS School random-game project JS/FE Pre-School 2023Q2"
     />
-
-    <title>Random Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+   
+    <link rel="shortcut icon" type="image/png" href="./img/favicon.ico" />
+    <title>Game | Guess the Number</title>
   </head>
   <body>
-    <div class="container">
-      <h1>Random Game</h1>
+    <div class="wrapper">
+      <div class="container">
+        <div class="game">
+          <header class="header">
+            <div class="switch">
+              <div class="themes">
+                <button class="btn">
+                  <a href="#" class="themetoggle"
+                    ><p></p>
+                    <span class="material-icons"> wb_sunny </span>
+                  </a>
+                </button>
+              </div>
+            </div>
+
+            <div class="header__title">
+              <h1 class="heading lng-heading">Guess the Number</h1>
+              <p class="secondary-heading lng-secondary-heading">
+                (Between 1 and 20)
+              </p>
+            </div>
+            <div class="header__buttons">
+              <button class="btn again lng-again">Try Again</button>
+            </div>
+          </header>
+
+          <div class="secret-number">?</div>
+
+          <main class="columns">
+            <section class="column_left">
+              <div class="input-box">
+                <input type="number" class="input" />
+              </div>
+              <button class="btn check lng-check">Check</button>
+            </section>
+            <section class="column_right">
+              <p class="message lng-message">Start guessing...</p>
+              <p class="label-score lng-label-score">
+                Score: <span class="score">20</span>
+              </p>
+              <p class="label-highscore lng-label-highscore">
+                Highscore: <span class="highscore">0</span>
+              </p>
+            </section>
+          </main>
+        </div>
+        <div class="results">
+          <h3>BEST RESULTS</h3>
+          <ul class="table">
+            <li>Result 1</li>
+            <li>Result 2</li>
+            <li>Result 3</li>
+            <li>Result 4</li>
+            <li>Result 5</li>
+            <li>Result 6</li>
+            <li>Result 7</li>
+            <li>Result 8</li>
+            <li>Result 9</li>
+            <li>Result 10</li>
+          </ul>
+        </div>
+      </div>
+
+      <footer class="footer__container">
+        <a href="https://rs.school/js-stage0/" target="_blank"
+          ><img
+            class="rs-logo"
+            src="./img/rs-school-js.svg"
+            alt="RS School logo"
+        /></a>
+        <p class="year-text">&copy; 2023</p>
+        <a href="https://github.com/LiudmilaRodzina" target="_blank"
+          ><img class="gh-logo" src="./img/github.svg" alt="GitHub logo"
+        /></a>
+      </footer>
     </div>
-    <script src="script.js"></script>
   </body>
 </html>
