@@ -18,9 +18,9 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
-    <link rel="stylesheet" href="./style.css" />
-    <script defer src="./script.js"></script>
-
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <script defer src="themes.js"></script>
     <link rel="shortcut icon" type="image/png" href="./img/favicon.ico" />
     <title>Game | Guess the Number</title>
   </head>
@@ -29,25 +29,33 @@
       <div class="container">
         <div class="game">
           <header class="header">
-            <div class="switch">
-              <div class="themes">
-                <button class="btn">
-                  <a href="#" class="themetoggle"
-                    ><p></p>
-                    <span class="material-icons"> wb_sunny </span>
-                  </a>
-                </button>
-              </div>
+            <div class="themes">
+              <button class="btn theme">
+                <a href="#" class="themetoggle">
+                  <span class="material-icons"> wb_sunny </span>
+                </a>
+              </button>
             </div>
-
             <div class="header__title">
-              <h1 class="heading lng-heading">Guess the Number</h1>
-              <p class="secondary-heading lng-secondary-heading">
-                (Between 1 and 20)
+              <h1 class="heading-primary">Guess the Number</h1>
+              <p class="heading-secondary">
+                (Between <span class="num">1</span> and
+                <span class="num">20</span>)
               </p>
             </div>
             <div class="header__buttons">
-              <button class="btn again lng-again">Try Again</button>
+              <button class="btn restart">
+                <span>Restart</span>
+                <img
+                  class="icon"
+                  src="./img/reload-circle-outline.svg"
+                  alt="reload icon"
+                />
+              </button>
+              <button class="btn again">
+                Try <br />
+                again
+              </button>
             </div>
           </header>
 
@@ -55,39 +63,34 @@
 
           <main class="columns">
             <section class="column_left">
+              <p>Enter your <br />number here:</p>
               <div class="input-box">
                 <input type="number" class="input" />
               </div>
-              <button class="btn check lng-check">Check</button>
+              <button class="btn check">Check!</button>
             </section>
             <section class="column_right">
-              <p class="message lng-message">Start guessing...</p>
-              <p class="label-score lng-label-score">
-                Score: <span class="score">20</span>
-              </p>
-              <p class="label-highscore lng-label-highscore">
-                Highscore: <span class="highscore">0</span>
+              <p class="message">Start guessing...</p>
+              <p class="label-score">
+                Number of guesses: <span class="number-of-guesses">0</span>
               </p>
             </section>
           </main>
         </div>
-        <div class="results">
-          <h3>BEST RESULTS</h3>
-          <ul class="table">
-            <li>Result 1</li>
-            <li>Result 2</li>
-            <li>Result 3</li>
-            <li>Result 4</li>
-            <li>Result 5</li>
-            <li>Result 6</li>
-            <li>Result 7</li>
-            <li>Result 8</li>
-            <li>Result 9</li>
-            <li>Result 10</li>
-          </ul>
+        <div class="field_add">
+          <div id="results" class="results">
+            <h3>LAST <span class="num">10</span> RESULTS:</h3>
+            <ul id="results_list"></ul>
+          </div>
+          <div class="rules">
+            <h3>GAME RULES</h3>
+            <ul class="rules_text">
+              <li>The best result is the lowest number of guesses</li>
+              <li>To reset the game press "Restart"</li>
+            </ul>
+          </div>
         </div>
       </div>
-
       <footer class="footer__container">
         <a href="https://rs.school/js-stage0/" target="_blank"
           ><img
