@@ -1,88 +1,93 @@
 "use strict";
+console.log(
+  `Привет! Вроде бы минимальные требования задания выполнены. Спасибо за ожидание!`
+);
 
-console.log(`Привет! Не успела выполнить задание полностью. Если есть возможность, вернись, пожалуйста, к проверке в среду. Спасибо!
-
-Не выполнено:
-Есть таблица результатов, в которой сохраняются результаты 10 игр с наибольшим счетом (лучшим временем и т.п.) или просто 10 последних игр (хранится в local storage) -10
-Анимации или звуки, или настройки игры. Баллы начисляются за любой из перечисленных пунктов -10
-
-Итого: 40 баллов
-`);
-
-/////////// THEMES toggle///////////////////////////////
-const html = document.querySelector("html");
-
-const themeToggler = document.querySelector(".themetoggle");
-
-themeToggler.addEventListener("click", (e) => {
-  e.preventDefault();
-  if (localStorage.getItem("theme") === "dark") {
-    localStorage.removeItem("theme");
-  } else {
-    localStorage.setItem("theme", "dark");
-  }
-  addDarkTheme();
-});
-
-const addDarkTheme = function () {
-  if (localStorage.getItem("theme") === "dark") {
-    html.classList.add("dark");
-    document.querySelector(".themetoggle span").textContent = "wb_sunny";
-  } else {
-    html.classList.remove("dark");
-    document.querySelector(".themetoggle span").textContent = "dark_mode";
-  }
-};
-addDarkTheme();
-
-////// GAME logic //////////////////
+// Game Logic //
 const body = document.querySelector("body");
 const number = document.querySelector(".secret-number");
 const checkBtn = document.querySelector(".check");
 const againBtn = document.querySelector(".again");
 
-let randomNumber = Math.trunc(Math.random() * 5) + 1;
-let score = 20;
-let highscore = 0;
+let randomNumber = Math.trunc(Math.random() * 20) + 1;
+let numberOfGuesses = 0;
 
 const displayMessage = function (message) {
   document.querySelector(".message").textContent = message;
 };
-
 checkBtn.addEventListener("click", function () {
   const input = +document.querySelector(".input").value;
   if (!input) {
-    displayMessage("Invalid input!");
+    displayMessage("🤷‍♀️ Invalid input!");
+  } else if (input !== randomNumber) {
+    displayMessage(input > randomNumber ? "📈 Too high!" : "📉 Too low!");
+    numberOfGuesses++;
+    document.querySelector(".number-of-guesses").textContent = numberOfGuesses;
+    if (numberOfGuesses > 20 - 1) {
+      displayMessage("💥 You lost!");
+      document.querySelector(".secret-number").textContent = randomNumber;
+
+      document.querySelector(".number-of-guesses").textContent =
+        numberOfGuesses;
+
+      checkBtn.disabled = true;
+      checkBtn.classList.add("disable");
+    }
+    //// when  guess is correct
   } else if (input === randomNumber) {
     displayMessage("🥇 You win!");
+    numberOfGuesses++;
+    document.querySelector(".secret-number").style.backgroundColor = "#a4d8aa";
+    if (numberOfGuesses > 0) {
+      saveScore();
+      location.reload();
+    }
     document.querySelector(".secret-number").textContent = randomNumber;
+    document.querySelector(".number-of-guesses").textContent = numberOfGuesses;
     number.style.width = "30rem";
-
-    if (score > highscore) {
-      highscore = score;
-      document.querySelector(".highscore").textContent = highscore;
-    }
-  }
-
-  // when guess is wrong
-  else if (input !== randomNumber) {
-    if (score > 1) {
-      displayMessage(input > randomNumber ? "Too high!" : "Too low!");
-      score--;
-      document.querySelector(".score").textContent = score;
-    } else {
-      displayMessage("💥 You lost :(");
-      document.querySelector(".score").textContent = 0;
-    }
   }
 });
-
 againBtn.addEventListener("click", function () {
   number.style.width = "20rem";
   displayMessage("Start guessing...");
-  score = 20;
+  numberOfGuesses = 0;
   randomNumber = Math.trunc(Math.random() * 20 + 1);
-  document.querySelector(".score").textContent = score;
+  document.querySelector(".number-of-guesses").textContent = numberOfGuesses;
   document.querySelector(".secret-number").textContent = "?";
   document.querySelector(".input").value = "";
+  checkBtn.disabled = false;
+  checkBtn.classList.remove("disable");
+  saveScore();
+  location.reload();
+});
+
+// Local Storage //
+let results = JSON.parse(localStorage.getItem("results")) || [];
+
+const saveScore = (e) => {
+  const score = {
+    name: "Result",
+    score: numberOfGuesses,
+  };
+  if (score.score > 0) {
+    results.unshift(score);
+    results.splice(10);
+  }
+  localStorage.setItem("results", JSON.stringify(results));
+};
+saveScore();
+
+// Render Results List //
+const resultsList = document.getElementById("results_list");
+resultsList.innerHTML = results
+  .map((score) => {
+    return `<li class='high-score'>${score.name}: <span class='num'>${score.score}</span></li>`;
+  })
+  .join("");
+
+// Restart //
+const clearBtn = document.querySelector(".restart");
+clearBtn.addEventListener("click", () => {
+  localStorage.clear();
+  location.reload();
 });
