@@ -13,8 +13,6 @@ const guessesContainer = document.querySelector(".number-of-guesses");
 let randomNumber = Math.trunc(Math.random() * 20) + 1;
 let numberOfGuesses = 0;
 
-secretNumber.textContent = randomNumber;
-
 const displayMessage = function (message) {
   document.querySelector(".message").textContent = message;
 };
