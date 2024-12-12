@@ -28,6 +28,13 @@ This project is a responsive web page with interactive elements. Below is a summ
   - Adapts layout and visibility of elements according to screen width.
 - **Smooth Scrolling**: Implemented for anchor links.
 
+#### Technologies Used
+
+- [![HTML](https://img.shields.io/badge/HTML5-E34F26?style=plastic&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+- [![Sass](https://img.shields.io/badge/Sass-CC6699?style=plastic&logo=sass&logoColor=white)](https://sass-lang.com/)
+- [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=plastic&logo=javascript&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [![Parcel](https://img.shields.io/badge/Parcel-BBC1D6?style=plastic&logo=parcel&logoColor=white)](https://parceljs.org/)
+
 #### Figma Design
 
 You can view the design used for this project on [Figma](https://www.figma.com/design/SGY7eOpXC1xBddFNsb72o7/%D0%91%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B0-stage0?node-id=0-1&node-type=canvas&t=iOicmdBFy9MFpqbX-0).
