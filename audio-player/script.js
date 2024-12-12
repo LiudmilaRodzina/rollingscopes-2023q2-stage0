@@ -84,7 +84,6 @@ track.addEventListener("timeupdate", updateProgressBar);
 const updateTime = (e) => {
   let { duration, currentTime } = e.srcElement;
   if (duration) {
-    // timeTotal.innerHTML = `Track duration: ${formatTime(duration)}`;
     timeTotal.innerHTML = `${formatTime(duration)}`;
   } else {
     timeTotal.innerHTML = `${"00:00"}`;
