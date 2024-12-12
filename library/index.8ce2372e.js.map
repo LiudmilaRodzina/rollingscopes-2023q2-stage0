@@ -1,1 +1,0 @@
-{"mappings":"ACAA,QAAQ,GAAA,CAAI","sources":["<anon>","src/js/main.js"],"sourcesContent":["console.log(\"Add responsive 768px\\nAdd adaptive 1440-640px\");\n\n//# sourceMappingURL=index.8ce2372e.js.map\n","console.log(\"Add responsive 768px\\nAdd adaptive 1440-640px\");\r\n"],"names":["console","log"],"version":3,"file":"index.8ce2372e.js.map"}
