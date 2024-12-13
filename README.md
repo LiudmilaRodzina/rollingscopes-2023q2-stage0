@@ -11,7 +11,7 @@ This course offers a comprehensive introduction to web development, combining se
   - **[Library](https://liudmilarodzina.github.io/rollingscopes-2023q2-stage0/library/)**: Responsive web page with interactive elements.
   - **[Audio Player](https://liudmilarodzina.github.io/rollingscopes-2023q2-stage0/audio-player/)**: Web-based audio player with multiple track playback.
   - **[Image Gallery](https://liudmilarodzina.github.io/rollingscopes-2023q2-stage0/image-gallery/)**: Fetches and displays images from the Unsplash API.
-  - **[Guess the Number](https://liudmilarodzina.github.io/rollingscopes-2023q2-stage0/guess-the-number/)**: Number guessing game with feedback and score tracking.
+  - **[Guess the Number](https://liudmilarodzina.github.io/rollingscopes-2023q2-stage0/random-game/)**: Number guessing game with feedback and score tracking.
 
 The projects are located in separate branches of this repository.
 
