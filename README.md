@@ -3,8 +3,6 @@
 **JavaScript / Front-end Course Pre-school 2023q2**
 (June 2023 - October 2023)
 
-This course offers a comprehensive introduction to web development, combining self-study, group study and cross-check review.
-
 - **Technologies Learned**: HTML, CSS, Sass, JavaScript, Git, GitHub, Parcel
 - **Projects Completed**:
 
@@ -13,8 +11,8 @@ This course offers a comprehensive introduction to web development, combining se
   - **[Image Gallery](https://liudmilarodzina.github.io/rollingscopes-2023q2-stage0/image-gallery/)**: Fetches and displays images from the Unsplash API.
   - **[Guess the Number](https://liudmilarodzina.github.io/rollingscopes-2023q2-stage0/random-game/)**: Number guessing game with feedback and score tracking.
 
-The projects are located in separate branches of this repository.
+The projects are located in separate branches of this repository. This repository is mirrored from my school private repository to showcase the development process.
 
 **Certificate of Completion**: [View Certificate](https://app.rs.school/certificate/gkpxoxk6)
 
-For more details, visit [RS School](https://rs.school/). 
+For more details, visit [RS School](https://rs.school/).
