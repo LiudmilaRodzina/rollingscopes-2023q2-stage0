@@ -17,4 +17,4 @@ The projects are located in separate branches of this repository.
 
 **Certificate of Completion**: [View Certificate](https://app.rs.school/certificate/gkpxoxk6)
 
-For more details, visit [RS School](https://rs.school/). 🚀
+For more details, visit [RS School](https://rs.school/). 
